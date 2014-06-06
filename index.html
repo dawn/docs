@@ -64,21 +64,21 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /account
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/account
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "username": "ThatGuy417",
-  "api_key": "abfc287239862398",
-  "email": "wearethatguy@gmail.com"
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ThatGuy417"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"api_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abfc287239862398"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wearethatguy@gmail.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>Account API Update</h3>
 
@@ -110,7 +110,7 @@
 </table>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X PATCH /account
+<pre><code class="highlight plaintext">$ curl -n -X PATCH https://dawn.dev/account
 -H "Content-Type: application/json" \
 -d '{"username":"ThatGuy417","password":"45fancypants"}'
 </code></pre>
@@ -118,15 +118,15 @@
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "username": "ThatGuy417",
-  "api_key": "abfc287239862398",
-  "email": "wearethatguy@gmail.com"
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ThatGuy417"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"api_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abfc287239862398"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wearethatguy@gmail.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h2>Account SSH-Keys</h2>
 
@@ -197,7 +197,7 @@
 </table>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST /account/keys
+<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/account/keys
 -H "Content-Type: application/json" \
 -d '{"key":null}'
 </code></pre>
@@ -205,14 +205,14 @@
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 201 Created
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "key": "...",
-  "fingerprint": "c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06"
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>Account SSH-Keys Delete</h3>
 
@@ -221,20 +221,20 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X DELETE /account/keys/$KEY_ID
+<pre><code class="highlight plaintext">$ curl -n -X DELETE https://dawn.dev/account/keys/$KEY_ID
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "key": "...",
-  "fingerprint": "c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06"
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>Account SSH-Keys Info</h3>
 
@@ -243,20 +243,20 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /account/keys/$KEY_ID
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/account/keys/$KEY_ID
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "key": "...",
-  "fingerprint": "c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06"
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>Account SSH-Keys List</h3>
 
@@ -265,22 +265,22 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /account/keys
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/account/keys
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">[
-  {
-    "created_at": "2012-01-01T12:00:00Z",
-    "id": "01234567-89ab-cdef-0123-456789abcdef",
-    "updated_at": "2012-01-01T12:00:00Z",
-    "key": "...",
-    "fingerprint": "c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06"
-  }
-]
-</code></pre>
+<pre><code class="highlight json"><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
 
 <h2>App API</h2>
 
@@ -363,7 +363,7 @@
 </table>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST /apps
+<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps
 -H "Content-Type: application/json" \
 -d '{"name":"Saucer UFO"}'
 </code></pre>
@@ -371,20 +371,20 @@
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 201 Created
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Saucer UFO",
-  "git": "grave-pare-24",
-  "formation": {
-    "web": 1
-  },
-  "env": {
-    "HYBRID": "true"
-  }
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>App API Delete</h3>
 
@@ -393,26 +393,26 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X DELETE /apps/$APP_ID
+<pre><code class="highlight plaintext">$ curl -n -X DELETE https://dawn.dev/apps/$APP_ID
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Saucer UFO",
-  "git": "grave-pare-24",
-  "formation": {
-    "web": 1
-  },
-  "env": {
-    "HYBRID": "true"
-  }
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>App API Info</h3>
 
@@ -421,26 +421,26 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /apps/$APP_ID
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps/$APP_ID
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Saucer UFO",
-  "git": "grave-pare-24",
-  "formation": {
-    "web": 1
-  },
-  "env": {
-    "HYBRID": "true"
-  }
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>App API List</h3>
 
@@ -449,28 +449,28 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /apps
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">[
-  {
-    "created_at": "2012-01-01T12:00:00Z",
-    "id": "01234567-89ab-cdef-0123-456789abcdef",
-    "updated_at": "2012-01-01T12:00:00Z",
-    "name": "Saucer UFO",
-    "git": "grave-pare-24",
-    "formation": {
-      "web": 1
-    },
-    "env": {
-      "HYBRID": "true"
-    }
-  }
-]
-</code></pre>
+<pre><code class="highlight json"><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
 
 <h3>App API Update</h3>
 
@@ -496,7 +496,7 @@
 </table>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X PATCH /apps/$APP_ID
+<pre><code class="highlight plaintext">$ curl -n -X PATCH https://dawn.dev/apps/$APP_ID
 -H "Content-Type: application/json" \
 -d '{"name":"Saucer UFO"}'
 </code></pre>
@@ -504,20 +504,20 @@
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Saucer UFO",
-  "git": "grave-pare-24",
-  "formation": {
-    "web": 1
-  },
-  "env": {
-    "HYBRID": "true"
-  }
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>App API Create Gear</h3>
 
@@ -526,26 +526,26 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST /apps/$APP_ID/gears
+<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps/$APP_ID/gears
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 201 Created
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Saucer UFO",
-  "git": "grave-pare-24",
-  "formation": {
-    "web": 1
-  },
-  "env": {
-    "HYBRID": "true"
-  }
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>App API List Gears</h3>
 
@@ -554,28 +554,28 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /apps/$APP_ID/gears
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps/$APP_ID/gears
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">[
-  {
-    "created_at": "2012-01-01T12:00:00Z",
-    "id": "01234567-89ab-cdef-0123-456789abcdef",
-    "updated_at": "2012-01-01T12:00:00Z",
-    "name": "Saucer UFO",
-    "git": "grave-pare-24",
-    "formation": {
-      "web": 1
-    },
-    "env": {
-      "HYBRID": "true"
-    }
-  }
-]
-</code></pre>
+<pre><code class="highlight json"><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
 
 <h3>App API Restart Gears</h3>
 
@@ -584,26 +584,26 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST /apps/$APP_ID/gears/restart
+<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps/$APP_ID/gears/restart
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Saucer UFO",
-  "git": "grave-pare-24",
-  "formation": {
-    "web": 1
-  },
-  "env": {
-    "HYBRID": "true"
-  }
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>App API Create Domain</h3>
 
@@ -629,7 +629,7 @@
 </table>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST /apps/$APP_ID/domains
+<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps/$APP_ID/domains
 -H "Content-Type: application/json" \
 -d '{"url":"catsrus.org"}'
 </code></pre>
@@ -637,20 +637,20 @@
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 201 Created
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Saucer UFO",
-  "git": "grave-pare-24",
-  "formation": {
-    "web": 1
-  },
-  "env": {
-    "HYBRID": "true"
-  }
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>App API List Domains</h3>
 
@@ -659,28 +659,28 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /apps/$APP_ID/domains
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps/$APP_ID/domains
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">[
-  {
-    "created_at": "2012-01-01T12:00:00Z",
-    "id": "01234567-89ab-cdef-0123-456789abcdef",
-    "updated_at": "2012-01-01T12:00:00Z",
-    "name": "Saucer UFO",
-    "git": "grave-pare-24",
-    "formation": {
-      "web": 1
-    },
-    "env": {
-      "HYBRID": "true"
-    }
-  }
-]
-</code></pre>
+<pre><code class="highlight json"><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
 
 <h3>App API Create Drain</h3>
 
@@ -706,7 +706,7 @@
 </table>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST /apps/$APP_ID/drains
+<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps/$APP_ID/drains
 -H "Content-Type: application/json" \
 -d '{"url":"catsrus.org"}'
 </code></pre>
@@ -714,20 +714,20 @@
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 201 Created
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Saucer UFO",
-  "git": "grave-pare-24",
-  "formation": {
-    "web": 1
-  },
-  "env": {
-    "HYBRID": "true"
-  }
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>App API List Drains</h3>
 
@@ -736,28 +736,28 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /apps/$APP_ID/drains
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps/$APP_ID/drains
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">[
-  {
-    "created_at": "2012-01-01T12:00:00Z",
-    "id": "01234567-89ab-cdef-0123-456789abcdef",
-    "updated_at": "2012-01-01T12:00:00Z",
-    "name": "Saucer UFO",
-    "git": "grave-pare-24",
-    "formation": {
-      "web": 1
-    },
-    "env": {
-      "HYBRID": "true"
-    }
-  }
-]
-</code></pre>
+<pre><code class="highlight json"><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
 
 <h3>App API Formation</h3>
 
@@ -766,26 +766,26 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /apps/$APP_ID/scale
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps/$APP_ID/scale
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Saucer UFO",
-  "git": "grave-pare-24",
-  "formation": {
-    "web": 1
-  },
-  "env": {
-    "HYBRID": "true"
-  }
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>App API Update Formation</h3>
 
@@ -794,26 +794,26 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST /apps/$APP_ID/scale
+<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps/$APP_ID/scale
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Saucer UFO",
-  "git": "grave-pare-24",
-  "formation": {
-    "web": 1
-  },
-  "env": {
-    "HYBRID": "true"
-  }
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>App API Get ENV</h3>
 
@@ -822,26 +822,26 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /apps/$APP_ID/env
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps/$APP_ID/env
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Saucer UFO",
-  "git": "grave-pare-24",
-  "formation": {
-    "web": 1
-  },
-  "env": {
-    "HYBRID": "true"
-  }
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>App API Update ENV</h3>
 
@@ -850,26 +850,26 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST /apps/$APP_ID/env
+<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps/$APP_ID/env
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Saucer UFO",
-  "git": "grave-pare-24",
-  "formation": {
-    "web": 1
-  },
-  "env": {
-    "HYBRID": "true"
-  }
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>App API Logs</h3>
 
@@ -878,26 +878,26 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /apps/$APP_ID/logs
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps/$APP_ID/logs
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Saucer UFO",
-  "git": "grave-pare-24",
-  "formation": {
-    "web": 1
-  },
-  "env": {
-    "HYBRID": "true"
-  }
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>App API Run Command</h3>
 
@@ -923,7 +923,7 @@
 </table>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST /apps/$APP_ID/run
+<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps/$APP_ID/run
 -H "Content-Type: application/json" \
 -d '{"command":null}'
 </code></pre>
@@ -931,20 +931,20 @@
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Saucer UFO",
-  "git": "grave-pare-24",
-  "formation": {
-    "web": 1
-  },
-  "env": {
-    "HYBRID": "true"
-  }
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saucer UFO"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"git"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grave-pare-24"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"formation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"HYBRID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h2>Domain API</h2>
 
@@ -992,19 +992,19 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X DELETE /domains/$DOMAIN_ID
+<pre><code class="highlight plaintext">$ curl -n -X DELETE https://dawn.dev/domains/$DOMAIN_ID
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "url": "catsrus.org"
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"catsrus.org"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>Domain API Info</h3>
 
@@ -1013,19 +1013,19 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /domains/$DOMAIN_ID
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/domains/$DOMAIN_ID
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "url": "catsrus.org"
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"catsrus.org"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h2>Drain API</h2>
 
@@ -1073,19 +1073,19 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X DELETE /drains/$DRAIN_ID
+<pre><code class="highlight plaintext">$ curl -n -X DELETE https://dawn.dev/drains/$DRAIN_ID
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "url": "catsrus.org"
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"catsrus.org"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>Drain API Info</h3>
 
@@ -1094,19 +1094,19 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /drains/$DRAIN_ID
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/drains/$DRAIN_ID
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "url": "catsrus.org"
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"catsrus.org"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h2>Gear API</h2>
 
@@ -1172,22 +1172,22 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X DELETE /gears/$GEAR_ID
+<pre><code class="highlight plaintext">$ curl -n -X DELETE https://dawn.dev/gears/$GEAR_ID
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Happy Henry",
-  "number": "1",
-  "type": "web",
-  "uptime": "11191"
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Happy Henry"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"uptime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11191"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>Gear API Info</h3>
 
@@ -1196,22 +1196,22 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /gears/$GEAR_ID
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/gears/$GEAR_ID
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Happy Henry",
-  "number": "1",
-  "type": "web",
-  "uptime": "11191"
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Happy Henry"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"uptime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11191"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>Gear API Restart</h3>
 
@@ -1220,22 +1220,22 @@
 </code></pre>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST /gears/$GEAR_ID/restart
+<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/gears/$GEAR_ID/restart
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "name": "Happy Henry",
-  "number": "1",
-  "type": "web",
-  "uptime": "11191"
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01234567-89ab-cdef-0123-456789abcdef"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-01-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Happy Henry"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"uptime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11191"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h2>Gitlab Interface</h2>
 
@@ -1294,15 +1294,15 @@
 </table>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /api/git/allowed?action=&amp;key_id=01234567-89ab-cdef-0123-456789abcdef&amp;project=&amp;ref=
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/api/git/allowed?action=&amp;key_id=01234567-89ab-cdef-0123-456789abcdef&amp;project=&amp;ref=
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h3>Gitlab Interface Find User by SSH-Key</h3>
 
@@ -1328,15 +1328,15 @@
 </table>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET /api/git/discover?key_id=01234567-89ab-cdef-0123-456789abcdef
+<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/api/git/discover?key_id=01234567-89ab-cdef-0123-456789abcdef
 </code></pre>
 
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h2>Git Stream</h2>
 
@@ -1377,7 +1377,7 @@
 </table>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST /api/stream/hook
+<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/api/stream/hook
 -H "Content-Type: application/json" \
 -d '{"git":null}'
 </code></pre>
@@ -1385,9 +1385,9 @@
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <h2>Session API</h2>
 
@@ -1440,7 +1440,7 @@
 </table>
 
 <h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST /login
+<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/login
 -H "Content-Type: application/json" \
 -d '{"username":"ThatGuy417","password":"45fancypants"}'
 </code></pre>
@@ -1448,10 +1448,10 @@
 <h4>Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
-<pre><code class="highlight plaintext">{
-  "api_key": "abfc287239862398"
-}
-</code></pre>
+<pre><code class="highlight json"><span class="p">{</span><span class="w">
+  </span><span class="s2">"api_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abfc287239862398"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
   </body>
 </html>

@@ -981,7 +981,10 @@
   ],
   "title": "Dawn API",
   "links": [
-    "dawn.dev"
+    {
+      "href": "https://dawn.dev",
+      "rel": "self"
+    }
   ],
   "description": "Dawn API"
 }

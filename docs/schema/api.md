@@ -57,14 +57,15 @@ GET /account
 
 #### Curl Example
 ```term
-$ curl -n -X GET /account
+$ curl -n -X GET https://dawn.dev/account
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -74,6 +75,7 @@ HTTP/1.1 200 OK
   "email": "wearethatguy@gmail.com"
 }
 ```
+
 ### Account API Update
 Update an existing account.
 
@@ -106,16 +108,17 @@ PATCH /account
 
 #### Curl Example
 ```term
-$ curl -n -X PATCH /account
+$ curl -n -X PATCH https://dawn.dev/account
 -H "Content-Type: application/json" \
 -d '{"username":"ThatGuy417","password":"45fancypants"}'
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -125,6 +128,7 @@ HTTP/1.1 200 OK
   "email": "wearethatguy@gmail.com"
 }
 ```
+
 
 ## Account SSH-Keys
 API for managing user SSH-keys
@@ -195,16 +199,17 @@ POST /account/keys
 
 #### Curl Example
 ```term
-$ curl -n -X POST /account/keys
+$ curl -n -X POST https://dawn.dev/account/keys
 -H "Content-Type: application/json" \
 -d '{"key":null}'
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 201 Created
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -213,6 +218,7 @@ HTTP/1.1 201 Created
   "fingerprint": "c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06"
 }
 ```
+
 ### Account SSH-Keys Delete
 Delete an existing key.
 
@@ -223,14 +229,15 @@ DELETE /account/keys/{key_id}
 
 #### Curl Example
 ```term
-$ curl -n -X DELETE /account/keys/$KEY_ID
+$ curl -n -X DELETE https://dawn.dev/account/keys/$KEY_ID
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -239,6 +246,7 @@ HTTP/1.1 200 OK
   "fingerprint": "c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06"
 }
 ```
+
 ### Account SSH-Keys Info
 Info for existing key.
 
@@ -249,14 +257,15 @@ GET /account/keys/{key_id}
 
 #### Curl Example
 ```term
-$ curl -n -X GET /account/keys/$KEY_ID
+$ curl -n -X GET https://dawn.dev/account/keys/$KEY_ID
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -265,6 +274,7 @@ HTTP/1.1 200 OK
   "fingerprint": "c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06"
 }
 ```
+
 ### Account SSH-Keys List
 List existing keys.
 
@@ -275,14 +285,15 @@ GET /account/keys
 
 #### Curl Example
 ```term
-$ curl -n -X GET /account/keys
+$ curl -n -X GET https://dawn.dev/account/keys
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 [
   {
     "created_at": "2012-01-01T12:00:00Z",
@@ -293,6 +304,7 @@ HTTP/1.1 200 OK
   }
 ]
 ```
+
 
 ## App API
 API for managing user apps
@@ -375,16 +387,17 @@ POST /apps
 
 #### Curl Example
 ```term
-$ curl -n -X POST /apps
+$ curl -n -X POST https://dawn.dev/apps
 -H "Content-Type: application/json" \
 -d '{"name":"Saucer UFO"}'
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 201 Created
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -399,6 +412,7 @@ HTTP/1.1 201 Created
   }
 }
 ```
+
 ### App API Delete
 Delete an existing app.
 
@@ -409,14 +423,15 @@ DELETE /apps/{app_id}
 
 #### Curl Example
 ```term
-$ curl -n -X DELETE /apps/$APP_ID
+$ curl -n -X DELETE https://dawn.dev/apps/$APP_ID
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -431,6 +446,7 @@ HTTP/1.1 200 OK
   }
 }
 ```
+
 ### App API Info
 Info for existing app.
 
@@ -441,14 +457,15 @@ GET /apps/{app_id}
 
 #### Curl Example
 ```term
-$ curl -n -X GET /apps/$APP_ID
+$ curl -n -X GET https://dawn.dev/apps/$APP_ID
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -463,6 +480,7 @@ HTTP/1.1 200 OK
   }
 }
 ```
+
 ### App API List
 List existing apps.
 
@@ -473,14 +491,15 @@ GET /apps
 
 #### Curl Example
 ```term
-$ curl -n -X GET /apps
+$ curl -n -X GET https://dawn.dev/apps
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 [
   {
     "created_at": "2012-01-01T12:00:00Z",
@@ -497,6 +516,7 @@ HTTP/1.1 200 OK
   }
 ]
 ```
+
 ### App API Update
 Update an existing app.
 
@@ -523,16 +543,17 @@ PATCH /apps/{app_id}
 
 #### Curl Example
 ```term
-$ curl -n -X PATCH /apps/$APP_ID
+$ curl -n -X PATCH https://dawn.dev/apps/$APP_ID
 -H "Content-Type: application/json" \
 -d '{"name":"Saucer UFO"}'
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -547,6 +568,7 @@ HTTP/1.1 200 OK
   }
 }
 ```
+
 ### App API Create Gear
 Create a new gear on app.
 
@@ -557,14 +579,15 @@ POST /apps/{app_id}/gears
 
 #### Curl Example
 ```term
-$ curl -n -X POST /apps/$APP_ID/gears
+$ curl -n -X POST https://dawn.dev/apps/$APP_ID/gears
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 201 Created
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -579,6 +602,7 @@ HTTP/1.1 201 Created
   }
 }
 ```
+
 ### App API List Gears
 List existing gears for app.
 
@@ -589,14 +613,15 @@ GET /apps/{app_id}/gears
 
 #### Curl Example
 ```term
-$ curl -n -X GET /apps/$APP_ID/gears
+$ curl -n -X GET https://dawn.dev/apps/$APP_ID/gears
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 [
   {
     "created_at": "2012-01-01T12:00:00Z",
@@ -613,6 +638,7 @@ HTTP/1.1 200 OK
   }
 ]
 ```
+
 ### App API Restart Gears
 Restart existing gears for app.
 
@@ -623,14 +649,15 @@ POST /apps/{app_id}/gears/restart
 
 #### Curl Example
 ```term
-$ curl -n -X POST /apps/$APP_ID/gears/restart
+$ curl -n -X POST https://dawn.dev/apps/$APP_ID/gears/restart
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -645,6 +672,7 @@ HTTP/1.1 200 OK
   }
 }
 ```
+
 ### App API Create Domain
 Create a new domain on app.
 
@@ -671,16 +699,17 @@ POST /apps/{app_id}/domains
 
 #### Curl Example
 ```term
-$ curl -n -X POST /apps/$APP_ID/domains
+$ curl -n -X POST https://dawn.dev/apps/$APP_ID/domains
 -H "Content-Type: application/json" \
 -d '{"url":"catsrus.org"}'
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 201 Created
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -695,6 +724,7 @@ HTTP/1.1 201 Created
   }
 }
 ```
+
 ### App API List Domains
 List existing domains for app.
 
@@ -705,14 +735,15 @@ GET /apps/{app_id}/domains
 
 #### Curl Example
 ```term
-$ curl -n -X GET /apps/$APP_ID/domains
+$ curl -n -X GET https://dawn.dev/apps/$APP_ID/domains
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 [
   {
     "created_at": "2012-01-01T12:00:00Z",
@@ -729,6 +760,7 @@ HTTP/1.1 200 OK
   }
 ]
 ```
+
 ### App API Create Drain
 Create a new drain on app.
 
@@ -755,16 +787,17 @@ POST /apps/{app_id}/drains
 
 #### Curl Example
 ```term
-$ curl -n -X POST /apps/$APP_ID/drains
+$ curl -n -X POST https://dawn.dev/apps/$APP_ID/drains
 -H "Content-Type: application/json" \
 -d '{"url":"catsrus.org"}'
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 201 Created
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -779,6 +812,7 @@ HTTP/1.1 201 Created
   }
 }
 ```
+
 ### App API List Drains
 List existing drains for app.
 
@@ -789,14 +823,15 @@ GET /apps/{app_id}/drains
 
 #### Curl Example
 ```term
-$ curl -n -X GET /apps/$APP_ID/drains
+$ curl -n -X GET https://dawn.dev/apps/$APP_ID/drains
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 [
   {
     "created_at": "2012-01-01T12:00:00Z",
@@ -813,6 +848,7 @@ HTTP/1.1 200 OK
   }
 ]
 ```
+
 ### App API Formation
 List existing formation for app.
 
@@ -823,14 +859,15 @@ GET /apps/{app_id}/scale
 
 #### Curl Example
 ```term
-$ curl -n -X GET /apps/$APP_ID/scale
+$ curl -n -X GET https://dawn.dev/apps/$APP_ID/scale
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -845,6 +882,7 @@ HTTP/1.1 200 OK
   }
 }
 ```
+
 ### App API Update Formation
 Update formation for app.
 
@@ -855,14 +893,15 @@ POST /apps/{app_id}/scale
 
 #### Curl Example
 ```term
-$ curl -n -X POST /apps/$APP_ID/scale
+$ curl -n -X POST https://dawn.dev/apps/$APP_ID/scale
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -877,6 +916,7 @@ HTTP/1.1 200 OK
   }
 }
 ```
+
 ### App API Get ENV
 Get ENV for app.
 
@@ -887,14 +927,15 @@ GET /apps/{app_id}/env
 
 #### Curl Example
 ```term
-$ curl -n -X GET /apps/$APP_ID/env
+$ curl -n -X GET https://dawn.dev/apps/$APP_ID/env
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -909,6 +950,7 @@ HTTP/1.1 200 OK
   }
 }
 ```
+
 ### App API Update ENV
 Update ENV for app.
 
@@ -919,14 +961,15 @@ POST /apps/{app_id}/env
 
 #### Curl Example
 ```term
-$ curl -n -X POST /apps/$APP_ID/env
+$ curl -n -X POST https://dawn.dev/apps/$APP_ID/env
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -941,6 +984,7 @@ HTTP/1.1 200 OK
   }
 }
 ```
+
 ### App API Logs
 Get logs URL
 
@@ -951,14 +995,15 @@ GET /apps/{app_id}/logs
 
 #### Curl Example
 ```term
-$ curl -n -X GET /apps/$APP_ID/logs
+$ curl -n -X GET https://dawn.dev/apps/$APP_ID/logs
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -973,6 +1018,7 @@ HTTP/1.1 200 OK
   }
 }
 ```
+
 ### App API Run Command
 Run command in app.
 
@@ -999,16 +1045,17 @@ POST /apps/{app_id}/run
 
 #### Curl Example
 ```term
-$ curl -n -X POST /apps/$APP_ID/run
+$ curl -n -X POST https://dawn.dev/apps/$APP_ID/run
 -H "Content-Type: application/json" \
 -d '{"command":null}'
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -1023,6 +1070,7 @@ HTTP/1.1 200 OK
   }
 }
 ```
+
 
 ## Domain API
 API for managing app domains
@@ -1071,14 +1119,15 @@ DELETE /domains/{domain_id}
 
 #### Curl Example
 ```term
-$ curl -n -X DELETE /domains/$DOMAIN_ID
+$ curl -n -X DELETE https://dawn.dev/domains/$DOMAIN_ID
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -1086,6 +1135,7 @@ HTTP/1.1 200 OK
   "url": "catsrus.org"
 }
 ```
+
 ### Domain API Info
 Info for existing domain.
 
@@ -1096,14 +1146,15 @@ GET /domains/{domain_id}
 
 #### Curl Example
 ```term
-$ curl -n -X GET /domains/$DOMAIN_ID
+$ curl -n -X GET https://dawn.dev/domains/$DOMAIN_ID
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -1111,6 +1162,7 @@ HTTP/1.1 200 OK
   "url": "catsrus.org"
 }
 ```
+
 
 ## Drain API
 API for managing app log drains
@@ -1159,14 +1211,15 @@ DELETE /drains/{drain_id}
 
 #### Curl Example
 ```term
-$ curl -n -X DELETE /drains/$DRAIN_ID
+$ curl -n -X DELETE https://dawn.dev/drains/$DRAIN_ID
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -1174,6 +1227,7 @@ HTTP/1.1 200 OK
   "url": "catsrus.org"
 }
 ```
+
 ### Drain API Info
 Info for existing drain.
 
@@ -1184,14 +1238,15 @@ GET /drains/{drain_id}
 
 #### Curl Example
 ```term
-$ curl -n -X GET /drains/$DRAIN_ID
+$ curl -n -X GET https://dawn.dev/drains/$DRAIN_ID
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -1199,6 +1254,7 @@ HTTP/1.1 200 OK
   "url": "catsrus.org"
 }
 ```
+
 
 ## Gear API
 API for managing app gears
@@ -1265,14 +1321,15 @@ DELETE /gears/{gear_id}
 
 #### Curl Example
 ```term
-$ curl -n -X DELETE /gears/$GEAR_ID
+$ curl -n -X DELETE https://dawn.dev/gears/$GEAR_ID
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -1283,6 +1340,7 @@ HTTP/1.1 200 OK
   "uptime": "11191"
 }
 ```
+
 ### Gear API Info
 Info for existing gear.
 
@@ -1293,14 +1351,15 @@ GET /gears/{gear_id}
 
 #### Curl Example
 ```term
-$ curl -n -X GET /gears/$GEAR_ID
+$ curl -n -X GET https://dawn.dev/gears/$GEAR_ID
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -1311,6 +1370,7 @@ HTTP/1.1 200 OK
   "uptime": "11191"
 }
 ```
+
 ### Gear API Restart
 Restart existing gear
 
@@ -1321,14 +1381,15 @@ POST /gears/{gear_id}/restart
 
 #### Curl Example
 ```term
-$ curl -n -X POST /gears/$GEAR_ID/restart
+$ curl -n -X POST https://dawn.dev/gears/$GEAR_ID/restart
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -1339,6 +1400,7 @@ HTTP/1.1 200 OK
   "uptime": "11191"
 }
 ```
+
 
 ## Gitlab Interface
 API for gitlab-shell's querying
@@ -1397,17 +1459,19 @@ GET /api/git/allowed
 
 #### Curl Example
 ```term
-$ curl -n -X GET /api/git/allowed?action=&key_id=01234567-89ab-cdef-0123-456789abcdef&project=&ref=
+$ curl -n -X GET https://dawn.dev/api/git/allowed?action=&key_id=01234567-89ab-cdef-0123-456789abcdef&project=&ref=
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
 }
 ```
+
 ### Gitlab Interface Find User by SSH-Key
 Find a User by their SSH-Key
 
@@ -1434,17 +1498,19 @@ GET /api/git/discover
 
 #### Curl Example
 ```term
-$ curl -n -X GET /api/git/discover?key_id=01234567-89ab-cdef-0123-456789abcdef
+$ curl -n -X GET https://dawn.dev/api/git/discover?key_id=01234567-89ab-cdef-0123-456789abcdef
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
 }
 ```
+
 
 ## Git Stream
 Responsible to streaming live to user during a git push
@@ -1485,19 +1551,21 @@ POST /api/stream/hook
 
 #### Curl Example
 ```term
-$ curl -n -X POST /api/stream/hook
+$ curl -n -X POST https://dawn.dev/api/stream/hook
 -H "Content-Type: application/json" \
 -d '{"git":null}'
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
 }
 ```
+
 
 ## Session API
 API for user login/logout
@@ -1550,19 +1618,21 @@ POST /login
 
 #### Curl Example
 ```term
-$ curl -n -X POST /login
+$ curl -n -X POST https://dawn.dev/login
 -H "Content-Type: application/json" \
 -d '{"username":"ThatGuy417","password":"45fancypants"}'
 ```
+
 
 #### Response Example
 ```
 HTTP/1.1 200 OK
 ```
-```javascript```
+```json
 {
   "api_key": "abfc287239862398"
 }
 ```
+
 
 
