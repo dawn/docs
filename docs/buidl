@@ -39,8 +39,9 @@ extensions = {
   no_intra_emphasis:   true,
 }
 # have redcarpet convert it to html
-toc_markdown = Redcarpet::Markdown.new Redcarpet::Render::HTML_TOC, extensions
-markdown = Redcarpet::Markdown.new Rougify.new(with_toc_data: true), extensions
+nesting_level = 3
+toc_markdown = Redcarpet::Markdown.new Redcarpet::Render::HTML_TOC.new(nesting_level: nesting_level), extensions
+markdown = Redcarpet::Markdown.new Rougify.new(with_toc_data: true, nesting_level: nesting_level), extensions
 
 # pack that markdown into the layout and produce a index.html
 data = File.read("schema/api.md")
