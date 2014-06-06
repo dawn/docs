@@ -1,7 +1,8 @@
 {
   "title": "Dawn API",
-  "links": [
-    "dawn.dev"
-  ],
+  "links": [{
+    "href": "https://dawn.dev",
+    "rel": "self"
+  }],
   "description": "Dawn API"
 }
