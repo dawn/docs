@@ -1,22 +1,51 @@
-#!/bin/bash
+#!/usr/bin/env ruby
 # buidl
-
 ###
 # So apparently I can't spell (actually its to avoid this being read as a
 # ant build file)
+###
+require 'redcarpet'
+require 'tilt'
+require 'rouge'
+require 'rouge/plugins/redcarpet'
+require 'ostruct'
+require 'fileutils'
+
+#class Rougify < Redcarpet::Render::HTML_TOC
+class Rougify < Redcarpet::Render::HTML
+  include Rouge::Plugins::Redcarpet # use Rouge with Redcarpet
+end
+
+###
 # trash the old api stuffs
 ###
-rm -vf api.json api.html api.md
+FileUtils::Verbose.rm_rf ["api.json", "api.html", "api.md"]
 
 ###
 # first up combine all the api schemas together to form the api.json
-(prmd combine -m schema/meta.json schema/schemata/api/ > schema/api.json) &&
+system %Q(prmd combine -m schema/meta.json schema/schemata/api/ > schema/api.json)
 # ensure that the newly created combine is good to go
-(prmd verify schema/api.json) &&
+system %Q(prmd verify schema/api.json)
 # generate a markdown document from the combined schema
-(prmd doc schema/api.json > schema/api.md) &&
-# have redcarpet convert it to a html file
-(redcarpet --parse-no_intra_emphasis --parse-fenced_code_blocks --smarty schema/api.md > schema/api.html) &&
-# pack that api.html into the layout and produce a index.html
-(ruby -e "require 'erb'; contents = File.read('schema/api.html'); STDOUT.write(ERB.new(File.read('layout.html.erb')).result)" > ../index.html)
+system %Q(prmd doc schema/api.json > schema/api.md)
+
+extensions = {
+  autolink:            true,
+  space_after_headers: true,
+  fenced_code_blocks:  true,
+  lax_spacing:         true,
+  strikethrough:       true,
+  superscript:         true,
+  no_intra_emphasis:   true,
+  #with_toc_data:       true,
+}
+# have redcarpet convert it to html
+markdown = Redcarpet::Markdown.new(Rougify, extensions)
+
+# pack that markdown into the layout and produce a index.html
+data = File.read("schema/api.md")
+context = OpenStruct.new
+context.contents = markdown.render(data)
+result = Tilt.new("layout.html.erb", pretty: true).render(context)
+File.write "../index.html", result
 ###
