@@ -1,4 +1,4 @@
-## Account API
+## Account
 API for retrieving and updating user details
 
 ### Attributes
@@ -47,7 +47,7 @@ API for retrieving and updating user details
   </tr>
 </table>
 
-### Account API Info
+### Account Info
 Info for existing account.
 
 ```
@@ -76,7 +76,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### Account API Update
+### Account Update
 Update an existing account.
 
 ```
@@ -306,7 +306,7 @@ HTTP/1.1 200 OK
 ```
 
 
-## App API
+## App
 API for managing user apps
 
 ### Attributes
@@ -361,7 +361,7 @@ API for managing user apps
   </tr>
 </table>
 
-### App API Create
+### App Create
 Create a new app.
 
 ```
@@ -413,7 +413,7 @@ HTTP/1.1 201 Created
 }
 ```
 
-### App API Delete
+### App Delete
 Delete an existing app.
 
 ```
@@ -447,7 +447,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### App API Info
+### App Info
 Info for existing app.
 
 ```
@@ -481,7 +481,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### App API List
+### App List
 List existing apps.
 
 ```
@@ -517,7 +517,7 @@ HTTP/1.1 200 OK
 ]
 ```
 
-### App API Update
+### App Update
 Update an existing app.
 
 ```
@@ -569,7 +569,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### App API Create Gear
+### App Create Gear
 Create a new gear on app.
 
 ```
@@ -603,7 +603,7 @@ HTTP/1.1 201 Created
 }
 ```
 
-### App API List Gears
+### App List Gears
 List existing gears for app.
 
 ```
@@ -639,7 +639,7 @@ HTTP/1.1 200 OK
 ]
 ```
 
-### App API Restart Gears
+### App Restart Gears
 Restart existing gears for app.
 
 ```
@@ -673,7 +673,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### App API Create Domain
+### App Create Domain
 Create a new domain on app.
 
 ```
@@ -725,7 +725,7 @@ HTTP/1.1 201 Created
 }
 ```
 
-### App API List Domains
+### App List Domains
 List existing domains for app.
 
 ```
@@ -761,7 +761,7 @@ HTTP/1.1 200 OK
 ]
 ```
 
-### App API Create Drain
+### App Create Drain
 Create a new drain on app.
 
 ```
@@ -813,7 +813,7 @@ HTTP/1.1 201 Created
 }
 ```
 
-### App API List Drains
+### App List Drains
 List existing drains for app.
 
 ```
@@ -849,7 +849,7 @@ HTTP/1.1 200 OK
 ]
 ```
 
-### App API Formation
+### App Formation
 List existing formation for app.
 
 ```
@@ -883,7 +883,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### App API Update Formation
+### App Update Formation
 Update formation for app.
 
 ```
@@ -917,7 +917,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### App API Get ENV
+### App Get ENV
 Get ENV for app.
 
 ```
@@ -951,7 +951,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### App API Update ENV
+### App Update ENV
 Update ENV for app.
 
 ```
@@ -985,7 +985,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### App API Logs
+### App Logs
 Get logs URL
 
 ```
@@ -1019,7 +1019,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### App API Run Command
+### App Run Command
 Run command in app.
 
 ```
@@ -1072,7 +1072,7 @@ HTTP/1.1 200 OK
 ```
 
 
-## Domain API
+## Domain
 API for managing app domains
 
 ### Attributes
@@ -1109,7 +1109,7 @@ API for managing app domains
   </tr>
 </table>
 
-### Domain API Delete
+### Domain Delete
 Delete an existing domain.
 
 ```
@@ -1136,7 +1136,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### Domain API Info
+### Domain Info
 Info for existing domain.
 
 ```
@@ -1164,7 +1164,7 @@ HTTP/1.1 200 OK
 ```
 
 
-## Drain API
+## Drain
 API for managing app log drains
 
 ### Attributes
@@ -1201,7 +1201,7 @@ API for managing app log drains
   </tr>
 </table>
 
-### Drain API Delete
+### Drain Delete
 Delete an existing drain.
 
 ```
@@ -1228,7 +1228,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### Drain API Info
+### Drain Info
 Info for existing drain.
 
 ```
@@ -1256,7 +1256,7 @@ HTTP/1.1 200 OK
 ```
 
 
-## Gear API
+## Gear
 API for managing app gears
 
 ### Attributes
@@ -1311,7 +1311,7 @@ API for managing app gears
   </tr>
 </table>
 
-### Gear API Delete
+### Gear Delete
 Delete an existing gear.
 
 ```
@@ -1341,7 +1341,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### Gear API Info
+### Gear Info
 Info for existing gear.
 
 ```
@@ -1371,7 +1371,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### Gear API Restart
+### Gear Restart
 Restart existing gear
 
 ```
@@ -1567,7 +1567,7 @@ HTTP/1.1 200 OK
 ```
 
 
-## Session API
+## Session
 API for user login/logout
 
 ### Attributes
@@ -1586,7 +1586,7 @@ API for user login/logout
   </tr>
 </table>
 
-### Session API Login
+### Session Login
 Login to the Dawn API
 
 ```

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/hyper-schema",
-  "title": "App API",
+  "title": "App",
   "definitions": {
     "created_at": {
       "description": "when app was created",

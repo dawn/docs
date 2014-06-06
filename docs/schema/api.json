@@ -3,7 +3,7 @@
   "definitions": {
     "account": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
-      "title": "Account API",
+      "title": "Account",
       "definitions": {
         "created_at": {
           "description": "when account was created",
@@ -228,7 +228,7 @@
     },
     "app": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
-      "title": "App API",
+      "title": "App",
       "definitions": {
         "created_at": {
           "description": "when app was created",
@@ -528,7 +528,7 @@
     },
     "domain": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
-      "title": "Domain API",
+      "title": "Domain",
       "definitions": {
         "created_at": {
           "description": "when domain was created",
@@ -603,7 +603,7 @@
     },
     "drain": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
-      "title": "Drain API",
+      "title": "Drain",
       "definitions": {
         "created_at": {
           "description": "when drain was created",
@@ -678,7 +678,7 @@
     },
     "gear": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
-      "title": "Gear API",
+      "title": "Gear",
       "definitions": {
         "created_at": {
           "description": "when gear was created",
@@ -905,7 +905,7 @@
     },
     "session": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
-      "title": "Session API",
+      "title": "Session",
       "definitions": {
         "identity": {
           "example": "0",
@@ -979,12 +979,12 @@
   "type": [
     "object"
   ],
-  "title": "Dawn API",
+  "title": "Dawn Client API",
   "links": [
     {
       "href": "https://api.dawn.dev",
       "rel": "self"
     }
   ],
-  "description": "Dawn API"
+  "description": "Dawn Client API"
 }

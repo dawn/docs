@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/hyper-schema",
-  "title": "Domain API",
+  "title": "Domain",
   "definitions": {
     "created_at": {
       "description": "when domain was created",

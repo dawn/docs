@@ -10,16 +10,16 @@
     <div class="table-o-contents">
       <ul>
 <li>
-<a href="#account-api">Account API</a>
+<a href="#account">Account</a>
 <ul>
 <li>
 <a href="#attributes">Attributes</a>
 </li>
 <li>
-<a href="#account-api-info">Account API Info</a>
+<a href="#account-info">Account Info</a>
 </li>
 <li>
-<a href="#account-api-update">Account API Update</a>
+<a href="#account-update">Account Update</a>
 </li>
 </ul>
 </li>
@@ -44,109 +44,109 @@
 </ul>
 </li>
 <li>
-<a href="#app-api">App API</a>
+<a href="#app">App</a>
 <ul>
 <li>
 <a href="#attributes">Attributes</a>
 </li>
 <li>
-<a href="#app-api-create">App API Create</a>
+<a href="#app-create">App Create</a>
 </li>
 <li>
-<a href="#app-api-delete">App API Delete</a>
+<a href="#app-delete">App Delete</a>
 </li>
 <li>
-<a href="#app-api-info">App API Info</a>
+<a href="#app-info">App Info</a>
 </li>
 <li>
-<a href="#app-api-list">App API List</a>
+<a href="#app-list">App List</a>
 </li>
 <li>
-<a href="#app-api-update">App API Update</a>
+<a href="#app-update">App Update</a>
 </li>
 <li>
-<a href="#app-api-create-gear">App API Create Gear</a>
+<a href="#app-create-gear">App Create Gear</a>
 </li>
 <li>
-<a href="#app-api-list-gears">App API List Gears</a>
+<a href="#app-list-gears">App List Gears</a>
 </li>
 <li>
-<a href="#app-api-restart-gears">App API Restart Gears</a>
+<a href="#app-restart-gears">App Restart Gears</a>
 </li>
 <li>
-<a href="#app-api-create-domain">App API Create Domain</a>
+<a href="#app-create-domain">App Create Domain</a>
 </li>
 <li>
-<a href="#app-api-list-domains">App API List Domains</a>
+<a href="#app-list-domains">App List Domains</a>
 </li>
 <li>
-<a href="#app-api-create-drain">App API Create Drain</a>
+<a href="#app-create-drain">App Create Drain</a>
 </li>
 <li>
-<a href="#app-api-list-drains">App API List Drains</a>
+<a href="#app-list-drains">App List Drains</a>
 </li>
 <li>
-<a href="#app-api-formation">App API Formation</a>
+<a href="#app-formation">App Formation</a>
 </li>
 <li>
-<a href="#app-api-update-formation">App API Update Formation</a>
+<a href="#app-update-formation">App Update Formation</a>
 </li>
 <li>
-<a href="#app-api-get-env">App API Get ENV</a>
+<a href="#app-get-env">App Get ENV</a>
 </li>
 <li>
-<a href="#app-api-update-env">App API Update ENV</a>
+<a href="#app-update-env">App Update ENV</a>
 </li>
 <li>
-<a href="#app-api-logs">App API Logs</a>
+<a href="#app-logs">App Logs</a>
 </li>
 <li>
-<a href="#app-api-run-command">App API Run Command</a>
+<a href="#app-run-command">App Run Command</a>
 </li>
 </ul>
 </li>
 <li>
-<a href="#domain-api">Domain API</a>
+<a href="#domain">Domain</a>
 <ul>
 <li>
 <a href="#attributes">Attributes</a>
 </li>
 <li>
-<a href="#domain-api-delete">Domain API Delete</a>
+<a href="#domain-delete">Domain Delete</a>
 </li>
 <li>
-<a href="#domain-api-info">Domain API Info</a>
+<a href="#domain-info">Domain Info</a>
 </li>
 </ul>
 </li>
 <li>
-<a href="#drain-api">Drain API</a>
+<a href="#drain">Drain</a>
 <ul>
 <li>
 <a href="#attributes">Attributes</a>
 </li>
 <li>
-<a href="#drain-api-delete">Drain API Delete</a>
+<a href="#drain-delete">Drain Delete</a>
 </li>
 <li>
-<a href="#drain-api-info">Drain API Info</a>
+<a href="#drain-info">Drain Info</a>
 </li>
 </ul>
 </li>
 <li>
-<a href="#gear-api">Gear API</a>
+<a href="#gear">Gear</a>
 <ul>
 <li>
 <a href="#attributes">Attributes</a>
 </li>
 <li>
-<a href="#gear-api-delete">Gear API Delete</a>
+<a href="#gear-delete">Gear Delete</a>
 </li>
 <li>
-<a href="#gear-api-info">Gear API Info</a>
+<a href="#gear-info">Gear Info</a>
 </li>
 <li>
-<a href="#gear-api-restart">Gear API Restart</a>
+<a href="#gear-restart">Gear Restart</a>
 </li>
 </ul>
 </li>
@@ -176,20 +176,20 @@
 </ul>
 </li>
 <li>
-<a href="#session-api">Session API</a>
+<a href="#session">Session</a>
 <ul>
 <li>
 <a href="#attributes">Attributes</a>
 </li>
 <li>
-<a href="#session-api-login">Session API Login</a>
+<a href="#session-login">Session Login</a>
 </li>
 </ul>
 </li>
 </ul>
 
     </div>
-    <h2 id="account-api">Account API</h2>
+    <h2 id="account">Account</h2>
 
 <p>API for retrieving and updating user details</p>
 
@@ -240,7 +240,7 @@
   </tr>
 </table>
 
-<h3 id="account-api-info">Account API Info</h3>
+<h3 id="account-info">Account Info</h3>
 
 <p>Info for existing account.</p>
 <pre><code class="highlight plaintext">GET /account
@@ -263,7 +263,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="account-api-update">Account API Update</h3>
+<h3 id="account-update">Account Update</h3>
 
 <p>Update an existing account.</p>
 <pre><code class="highlight plaintext">PATCH /account
@@ -465,7 +465,7 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<h2 id="app-api">App API</h2>
+<h2 id="app">App</h2>
 
 <p>API for managing user apps</p>
 
@@ -522,7 +522,7 @@
   </tr>
 </table>
 
-<h3 id="app-api-create">App API Create</h3>
+<h3 id="app-create">App Create</h3>
 
 <p>Create a new app.</p>
 <pre><code class="highlight plaintext">POST /apps
@@ -569,7 +569,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-delete">App API Delete</h3>
+<h3 id="app-delete">App Delete</h3>
 
 <p>Delete an existing app.</p>
 <pre><code class="highlight plaintext">DELETE /apps/{app_id}
@@ -597,7 +597,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-info">App API Info</h3>
+<h3 id="app-info">App Info</h3>
 
 <p>Info for existing app.</p>
 <pre><code class="highlight plaintext">GET /apps/{app_id}
@@ -625,7 +625,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-list">App API List</h3>
+<h3 id="app-list">App List</h3>
 
 <p>List existing apps.</p>
 <pre><code class="highlight plaintext">GET /apps
@@ -655,7 +655,7 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-update">App API Update</h3>
+<h3 id="app-update">App Update</h3>
 
 <p>Update an existing app.</p>
 <pre><code class="highlight plaintext">PATCH /apps/{app_id}
@@ -702,7 +702,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-create-gear">App API Create Gear</h3>
+<h3 id="app-create-gear">App Create Gear</h3>
 
 <p>Create a new gear on app.</p>
 <pre><code class="highlight plaintext">POST /apps/{app_id}/gears
@@ -730,7 +730,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-list-gears">App API List Gears</h3>
+<h3 id="app-list-gears">App List Gears</h3>
 
 <p>List existing gears for app.</p>
 <pre><code class="highlight plaintext">GET /apps/{app_id}/gears
@@ -760,7 +760,7 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-restart-gears">App API Restart Gears</h3>
+<h3 id="app-restart-gears">App Restart Gears</h3>
 
 <p>Restart existing gears for app.</p>
 <pre><code class="highlight plaintext">POST /apps/{app_id}/gears/restart
@@ -788,7 +788,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-create-domain">App API Create Domain</h3>
+<h3 id="app-create-domain">App Create Domain</h3>
 
 <p>Create a new domain on app.</p>
 <pre><code class="highlight plaintext">POST /apps/{app_id}/domains
@@ -835,7 +835,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-list-domains">App API List Domains</h3>
+<h3 id="app-list-domains">App List Domains</h3>
 
 <p>List existing domains for app.</p>
 <pre><code class="highlight plaintext">GET /apps/{app_id}/domains
@@ -865,7 +865,7 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-create-drain">App API Create Drain</h3>
+<h3 id="app-create-drain">App Create Drain</h3>
 
 <p>Create a new drain on app.</p>
 <pre><code class="highlight plaintext">POST /apps/{app_id}/drains
@@ -912,7 +912,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-list-drains">App API List Drains</h3>
+<h3 id="app-list-drains">App List Drains</h3>
 
 <p>List existing drains for app.</p>
 <pre><code class="highlight plaintext">GET /apps/{app_id}/drains
@@ -942,7 +942,7 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-formation">App API Formation</h3>
+<h3 id="app-formation">App Formation</h3>
 
 <p>List existing formation for app.</p>
 <pre><code class="highlight plaintext">GET /apps/{app_id}/scale
@@ -970,7 +970,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-update-formation">App API Update Formation</h3>
+<h3 id="app-update-formation">App Update Formation</h3>
 
 <p>Update formation for app.</p>
 <pre><code class="highlight plaintext">POST /apps/{app_id}/scale
@@ -998,7 +998,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-get-env">App API Get ENV</h3>
+<h3 id="app-get-env">App Get ENV</h3>
 
 <p>Get ENV for app.</p>
 <pre><code class="highlight plaintext">GET /apps/{app_id}/env
@@ -1026,7 +1026,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-update-env">App API Update ENV</h3>
+<h3 id="app-update-env">App Update ENV</h3>
 
 <p>Update ENV for app.</p>
 <pre><code class="highlight plaintext">POST /apps/{app_id}/env
@@ -1054,7 +1054,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-logs">App API Logs</h3>
+<h3 id="app-logs">App Logs</h3>
 
 <p>Get logs URL</p>
 <pre><code class="highlight plaintext">GET /apps/{app_id}/logs
@@ -1082,7 +1082,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="app-api-run-command">App API Run Command</h3>
+<h3 id="app-run-command">App Run Command</h3>
 
 <p>Run command in app.</p>
 <pre><code class="highlight plaintext">POST /apps/{app_id}/run
@@ -1129,7 +1129,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h2 id="domain-api">Domain API</h2>
+<h2 id="domain">Domain</h2>
 
 <p>API for managing app domains</p>
 
@@ -1168,7 +1168,7 @@
   </tr>
 </table>
 
-<h3 id="domain-api-delete">Domain API Delete</h3>
+<h3 id="domain-delete">Domain Delete</h3>
 
 <p>Delete an existing domain.</p>
 <pre><code class="highlight plaintext">DELETE /domains/{domain_id}
@@ -1189,7 +1189,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="domain-api-info">Domain API Info</h3>
+<h3 id="domain-info">Domain Info</h3>
 
 <p>Info for existing domain.</p>
 <pre><code class="highlight plaintext">GET /domains/{domain_id}
@@ -1210,7 +1210,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h2 id="drain-api">Drain API</h2>
+<h2 id="drain">Drain</h2>
 
 <p>API for managing app log drains</p>
 
@@ -1249,7 +1249,7 @@
   </tr>
 </table>
 
-<h3 id="drain-api-delete">Drain API Delete</h3>
+<h3 id="drain-delete">Drain Delete</h3>
 
 <p>Delete an existing drain.</p>
 <pre><code class="highlight plaintext">DELETE /drains/{drain_id}
@@ -1270,7 +1270,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="drain-api-info">Drain API Info</h3>
+<h3 id="drain-info">Drain Info</h3>
 
 <p>Info for existing drain.</p>
 <pre><code class="highlight plaintext">GET /drains/{drain_id}
@@ -1291,7 +1291,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h2 id="gear-api">Gear API</h2>
+<h2 id="gear">Gear</h2>
 
 <p>API for managing app gears</p>
 
@@ -1348,7 +1348,7 @@
   </tr>
 </table>
 
-<h3 id="gear-api-delete">Gear API Delete</h3>
+<h3 id="gear-delete">Gear Delete</h3>
 
 <p>Delete an existing gear.</p>
 <pre><code class="highlight plaintext">DELETE /gears/{gear_id}
@@ -1372,7 +1372,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="gear-api-info">Gear API Info</h3>
+<h3 id="gear-info">Gear Info</h3>
 
 <p>Info for existing gear.</p>
 <pre><code class="highlight plaintext">GET /gears/{gear_id}
@@ -1396,7 +1396,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3 id="gear-api-restart">Gear API Restart</h3>
+<h3 id="gear-restart">Gear Restart</h3>
 
 <p>Restart existing gear</p>
 <pre><code class="highlight plaintext">POST /gears/{gear_id}/restart
@@ -1572,7 +1572,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h2 id="session-api">Session API</h2>
+<h2 id="session">Session</h2>
 
 <p>API for user login/logout</p>
 
@@ -1593,7 +1593,7 @@
   </tr>
 </table>
 
-<h3 id="session-api-login">Session API Login</h3>
+<h3 id="session-login">Session Login</h3>
 
 <p>Login to the Dawn API</p>
 <pre><code class="highlight plaintext">POST /login
