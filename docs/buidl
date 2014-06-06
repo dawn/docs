@@ -16,7 +16,7 @@ rm -vf api.json api.html api.md
 # generate a markdown document from the combined schema
 (prmd doc schema/api.json > schema/api.md) &&
 # have redcarpet convert it to a html file
-(redcarpet --parse-no_intra_emphasis --smarty schema/api.md > schema/api.html) &&
+(redcarpet --parse-no_intra_emphasis --parse-fenced_code_blocks --smarty schema/api.md > schema/api.html) &&
 # pack that api.html into the layout and produce a index.html
 (ruby -e "require 'erb'; contents = File.read('schema/api.html'); STDOUT.write(ERB.new(File.read('layout.html.erb')).result)" > index.html)
 ###

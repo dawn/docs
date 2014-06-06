@@ -297,7 +297,7 @@
           ]
         }
       },
-      "description": "FIXME",
+      "description": "API for managing user apps",
       "links": [
         {
           "description": "Create a new app.",
@@ -566,7 +566,7 @@
           ]
         }
       },
-      "description": "FIXME",
+      "description": "API for managing app domains",
       "links": [
         {
           "description": "Delete an existing domain.",
@@ -641,7 +641,7 @@
           ]
         }
       },
-      "description": "FIXME",
+      "description": "API for managing app log drains",
       "links": [
         {
           "description": "Delete an existing drain.",
@@ -736,7 +736,7 @@
           ]
         }
       },
-      "description": "FIXME",
+      "description": "API for managing app gears",
       "links": [
         {
           "description": "Delete an existing gear.",
@@ -914,7 +914,7 @@
           ]
         }
       },
-      "description": "FIXME",
+      "description": "API for user login/logout",
       "links": [
         {
           "description": "Login to the Dawn API",

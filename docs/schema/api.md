@@ -295,7 +295,7 @@ HTTP/1.1 200 OK
 ```
 
 ## App API
-FIXME
+API for managing user apps
 
 ### Attributes
 <table>
@@ -1025,7 +1025,7 @@ HTTP/1.1 200 OK
 ```
 
 ## Domain API
-FIXME
+API for managing app domains
 
 ### Attributes
 <table>
@@ -1113,7 +1113,7 @@ HTTP/1.1 200 OK
 ```
 
 ## Drain API
-FIXME
+API for managing app log drains
 
 ### Attributes
 <table>
@@ -1201,7 +1201,7 @@ HTTP/1.1 200 OK
 ```
 
 ## Gear API
-FIXME
+API for managing app gears
 
 ### Attributes
 <table>
@@ -1500,7 +1500,7 @@ HTTP/1.1 200 OK
 ```
 
 ## Session API
-FIXME
+API for user login/logout
 
 ### Attributes
 <table>
