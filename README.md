@@ -1,4 +1,4 @@
 Dawn-Docs
 =========
-
-Load up your web browser and load up docs/index.html
+Use the github pages here if you came to read the documentation.
+[Docs](http://dawn.github.io/docs/)
