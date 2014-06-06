@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "title": "Session API",
+  "definitions": {
+    "identity": {
+      "example": "0",
+      "type": [
+        "string"
+      ]
+    }
+  },
+  "description": "API for user login/logout",
+  "links": [
+    {
+      "description": "Login to the Dawn API",
+      "href": "/login",
+      "method": "POST",
+      "rel": "login",
+      "schema": {
+        "properties": {
+          "username": {
+            "$ref": "/schemata/account#/definitions/username"
+          },
+          "password": {
+            "$ref": "/schemata/account#/definitions/password"
+          }
+        },
+        "type": [
+          "object"
+        ]
+      },
+      "title": "Login"
+    }
+  ],
+  "properties": {
+    "api_key": {
+      "$ref": "/schemata/account#/definitions/api_key"
+    }
+  },
+  "type": [
+    "object"
+  ],
+  "id": "schemata/session"
+}

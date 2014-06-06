@@ -1,0 +1,13 @@
+#!/bin/bash
+mkdir -p api
+mkdir -p api/account
+mkdir -p api/git
+prmd init account > api/account.json
+prmd init app > api/app.json
+prmd init domain > api/domain.json
+prmd init drain > api/drain.json
+prmd init gear > api/gear.json
+prmd init session > api/session.json
+prmd init account/key > api/account/key.json
+prmd init git/git > api/git/git.json
+prmd init git/stream > api/git/stream.json

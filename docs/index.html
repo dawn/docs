@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dawn API</title>
+    <link rel="stylesheet" href="./css/main.css" type="text/css" />
+  </head>
+  <body>
+    <h2>Account API</h2>
+
+<p>API for retrieving and updating user details</p>
+
+<h3>Attributes</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>api_key</strong></td>
+    <td><em>string</em></td>
+    <td>Unique identifier used for logging into the dawn API</td>
+    <td><code>"abfc287239862398"</code></td>
+  </tr>
+  <tr>
+    <td><strong>created_at</strong></td>
+    <td><em>date-time</em></td>
+    <td>when account was created</td>
+    <td><code>"2012-01-01T12:00:00Z"</code></td>
+  </tr>
+  <tr>
+    <td><strong>email</strong></td>
+    <td><em>email</em></td>
+    <td>User email</td>
+    <td><code>"wearethatguy@gmail.com"</code></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong></td>
+    <td><em>uuid</em></td>
+    <td>unique identifier of account</td>
+    <td><code>"01234567-89ab-cdef-0123-456789abcdef"</code></td>
+  </tr>
+  <tr>
+    <td><strong>updated_at</strong></td>
+    <td><em>date-time</em></td>
+    <td>when account was updated</td>
+    <td><code>"2012-01-01T12:00:00Z"</code></td>
+  </tr>
+  <tr>
+    <td><strong>username</strong></td>
+    <td><em>string</em></td>
+    <td>A String used for identifying users</td>
+    <td><code>"ThatGuy417"</code></td>
+  </tr>
+</table>
+
+<h3>Account API Info</h3>
+
+<p>Info for existing account.</p>
+
+<p><code>
+GET /account
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /account
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &ldquo;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;username&rdquo;: &ldquo;ThatGuy417&rdquo;,
+  &ldquo;api_key&rdquo;: &ldquo;abfc287239862398&rdquo;,
+  &ldquo;email&rdquo;: &ldquo;wearethatguy@gmail.com&rdquo;
+}
+&ldquo;`</p>
+
+<h3>Account API Update</h3>
+
+<p>Update an existing account.</p>
+
+<p><code>
+PATCH /account
+</code></p>
+
+<h4>Optional Parameters</h4>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>password</strong></td>
+    <td><em>string</em></td>
+    <td>A password.</td>
+    <td><code>"45fancypants"</code></td>
+  </tr>
+  <tr>
+    <td><strong>username</strong></td>
+    <td><em>string</em></td>
+    <td>A String used for identifying users</td>
+    <td><code>"ThatGuy417"</code></td>
+  </tr>
+</table>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X PATCH /account
+-H &quot;Content-Type: application/json&quot; \
+-d &#39;{&quot;username&quot;:&quot;ThatGuy417&quot;,&quot;password&quot;:&quot;45fancypants&quot;}&#39;
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;username&rdquo;: &ldquo;ThatGuy417&rdquo;,
+  &ldquo;api_key&rdquo;: &ldquo;abfc287239862398&rdquo;,
+  &ldquo;email&rdquo;: &ldquo;wearethatguy@gmail.com&rdquo;
+}
+&ldquo;`</p>
+
+<h2>Account SSH-Keys</h2>
+
+<p>API for managing user SSH-keys</p>
+
+<h3>Attributes</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>created_at</strong></td>
+    <td><em>date-time</em></td>
+    <td>when key was created</td>
+    <td><code>"2012-01-01T12:00:00Z"</code></td>
+  </tr>
+  <tr>
+    <td><strong>fingerprint</strong></td>
+    <td><em>string</em></td>
+    <td>Fingerprint</td>
+    <td><code>"c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06"</code></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong></td>
+    <td><em>uuid</em></td>
+    <td>unique identifier of key</td>
+    <td><code>"01234567-89ab-cdef-0123-456789abcdef"</code></td>
+  </tr>
+  <tr>
+    <td><strong>key</strong></td>
+    <td><em>string</em></td>
+    <td>Key</td>
+    <td><code>"..."</code></td>
+  </tr>
+  <tr>
+    <td><strong>updated_at</strong></td>
+    <td><em>date-time</em></td>
+    <td>when key was updated</td>
+    <td><code>"2012-01-01T12:00:00Z"</code></td>
+  </tr>
+</table>
+
+<h3>Account SSH-Keys Create</h3>
+
+<p>Create a new key.</p>
+
+<p><code>
+POST /account/keys
+</code></p>
+
+<h4>Optional Parameters</h4>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>key</strong></td>
+    <td><em>string</em></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X POST /account/keys
+-H &quot;Content-Type: application/json&quot; \
+-d &#39;{&quot;key&quot;:null}&#39;
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 201 Created
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;key&rdquo;: &ldquo;&hellip;&rdquo;,
+  &ldquo;fingerprint&rdquo;: &ldquo;c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06&rdquo;
+}
+&ldquo;`</p>
+
+<h3>Account SSH-Keys Delete</h3>
+
+<p>Delete an existing key.</p>
+
+<p><code>
+DELETE /account/keys/{key_id}
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X DELETE /account/keys/$KEY_ID
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;key&rdquo;: &ldquo;&hellip;&rdquo;,
+  &ldquo;fingerprint&rdquo;: &ldquo;c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06&rdquo;
+}
+&ldquo;`</p>
+
+<h3>Account SSH-Keys Info</h3>
+
+<p>Info for existing key.</p>
+
+<p><code>
+GET /account/keys/{key_id}
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /account/keys/$KEY_ID
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;key&rdquo;: &ldquo;&hellip;&rdquo;,
+  &ldquo;fingerprint&rdquo;: &ldquo;c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06&rdquo;
+}
+&ldquo;`</p>
+
+<h3>Account SSH-Keys List</h3>
+
+<p>List existing keys.</p>
+
+<p><code>
+GET /account/keys
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /account/keys
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+[
+  {
+    &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+    &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+    &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+    &ldquo;key&rdquo;: &ldquo;&hellip;&rdquo;,
+    &ldquo;fingerprint&rdquo;: &ldquo;c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06&rdquo;
+  }
+]
+&ldquo;`</p>
+
+<h2>App API</h2>
+
+<p>FIXME</p>
+
+<h3>Attributes</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>created_at</strong></td>
+    <td><em>date-time</em></td>
+    <td>when app was created</td>
+    <td><code>"2012-01-01T12:00:00Z"</code></td>
+  </tr>
+  <tr>
+    <td><strong>env</strong></td>
+    <td><em>object</em></td>
+    <td>ENV variables</td>
+    <td><code>["HYBRID","true"]</code></td>
+  </tr>
+  <tr>
+    <td><strong>formation</strong></td>
+    <td><em>object</em></td>
+    <td></td>
+    <td><code>["web",1]</code></td>
+  </tr>
+  <tr>
+    <td><strong>git</strong></td>
+    <td><em>string</em></td>
+    <td>repo name for app</td>
+    <td><code>"grave-pare-24"</code></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong></td>
+    <td><em>uuid</em></td>
+    <td>unique identifier of app</td>
+    <td><code>"01234567-89ab-cdef-0123-456789abcdef"</code></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong></td>
+    <td><em>string</em></td>
+    <td>name of the App</td>
+    <td><code>"Saucer UFO"</code></td>
+  </tr>
+  <tr>
+    <td><strong>updated_at</strong></td>
+    <td><em>date-time</em></td>
+    <td>when app was updated</td>
+    <td><code>"2012-01-01T12:00:00Z"</code></td>
+  </tr>
+</table>
+
+<h3>App API Create</h3>
+
+<p>Create a new app.</p>
+
+<p><code>
+POST /apps
+</code></p>
+
+<h4>Optional Parameters</h4>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>name</strong></td>
+    <td><em>string</em></td>
+    <td>name of the App</td>
+    <td><code>"Saucer UFO"</code></td>
+  </tr>
+</table>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X POST /apps
+-H &quot;Content-Type: application/json&quot; \
+-d &#39;{&quot;name&quot;:&quot;Saucer UFO&quot;}&#39;
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 201 Created
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+  &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+  &ldquo;formation&rdquo;: {
+    &ldquo;web&rdquo;: 1
+  },
+  &ldquo;env&rdquo;: {
+    &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+  }
+}
+&ldquo;`</p>
+
+<h3>App API Delete</h3>
+
+<p>Delete an existing app.</p>
+
+<p><code>
+DELETE /apps/{app_id}
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X DELETE /apps/$APP_ID
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+  &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+  &ldquo;formation&rdquo;: {
+    &ldquo;web&rdquo;: 1
+  },
+  &ldquo;env&rdquo;: {
+    &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+  }
+}
+&ldquo;`</p>
+
+<h3>App API Info</h3>
+
+<p>Info for existing app.</p>
+
+<p><code>
+GET /apps/{app_id}
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /apps/$APP_ID
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+  &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+  &ldquo;formation&rdquo;: {
+    &ldquo;web&rdquo;: 1
+  },
+  &ldquo;env&rdquo;: {
+    &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+  }
+}
+&ldquo;`</p>
+
+<h3>App API List</h3>
+
+<p>List existing apps.</p>
+
+<p><code>
+GET /apps
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /apps
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+[
+  {
+    &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+    &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+    &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+    &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+    &ldquo;formation&rdquo;: {
+      &ldquo;web&rdquo;: 1
+    },
+    &ldquo;env&rdquo;: {
+      &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+    }
+  }
+]
+&ldquo;`</p>
+
+<h3>App API Update</h3>
+
+<p>Update an existing app.</p>
+
+<p><code>
+PATCH /apps/{app_id}
+</code></p>
+
+<h4>Optional Parameters</h4>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>name</strong></td>
+    <td><em>string</em></td>
+    <td>name of the App</td>
+    <td><code>"Saucer UFO"</code></td>
+  </tr>
+</table>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X PATCH /apps/$APP_ID
+-H &quot;Content-Type: application/json&quot; \
+-d &#39;{&quot;name&quot;:&quot;Saucer UFO&quot;}&#39;
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+  &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+  &ldquo;formation&rdquo;: {
+    &ldquo;web&rdquo;: 1
+  },
+  &ldquo;env&rdquo;: {
+    &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+  }
+}
+&ldquo;`</p>
+
+<h3>App API Create Gear</h3>
+
+<p>Create a new gear on app.</p>
+
+<p><code>
+POST /apps/{app_id}/gears
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X POST /apps/$APP_ID/gears
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 201 Created
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+  &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+  &ldquo;formation&rdquo;: {
+    &ldquo;web&rdquo;: 1
+  },
+  &ldquo;env&rdquo;: {
+    &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+  }
+}
+&ldquo;`</p>
+
+<h3>App API List Gears</h3>
+
+<p>List existing gears for app.</p>
+
+<p><code>
+GET /apps/{app_id}/gears
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /apps/$APP_ID/gears
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+[
+  {
+    &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+    &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+    &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+    &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+    &ldquo;formation&rdquo;: {
+      &ldquo;web&rdquo;: 1
+    },
+    &ldquo;env&rdquo;: {
+      &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+    }
+  }
+]
+&ldquo;`</p>
+
+<h3>App API Restart Gears</h3>
+
+<p>Restart existing gears for app.</p>
+
+<p><code>
+POST /apps/{app_id}/gears/restart
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X POST /apps/$APP_ID/gears/restart
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+  &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+  &ldquo;formation&rdquo;: {
+    &ldquo;web&rdquo;: 1
+  },
+  &ldquo;env&rdquo;: {
+    &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+  }
+}
+&ldquo;`</p>
+
+<h3>App API Create Domain</h3>
+
+<p>Create a new domain on app.</p>
+
+<p><code>
+POST /apps/{app_id}/domains
+</code></p>
+
+<h4>Optional Parameters</h4>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>url</strong></td>
+    <td><em>url</em></td>
+    <td>domain url</td>
+    <td><code>"catsrus.org"</code></td>
+  </tr>
+</table>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X POST /apps/$APP_ID/domains
+-H &quot;Content-Type: application/json&quot; \
+-d &#39;{&quot;url&quot;:&quot;catsrus.org&quot;}&#39;
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 201 Created
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+  &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+  &ldquo;formation&rdquo;: {
+    &ldquo;web&rdquo;: 1
+  },
+  &ldquo;env&rdquo;: {
+    &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+  }
+}
+&ldquo;`</p>
+
+<h3>App API List Domains</h3>
+
+<p>List existing domains for app.</p>
+
+<p><code>
+GET /apps/{app_id}/domains
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /apps/$APP_ID/domains
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+[
+  {
+    &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+    &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+    &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+    &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+    &ldquo;formation&rdquo;: {
+      &ldquo;web&rdquo;: 1
+    },
+    &ldquo;env&rdquo;: {
+      &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+    }
+  }
+]
+&ldquo;`</p>
+
+<h3>App API Create Drain</h3>
+
+<p>Create a new drain on app.</p>
+
+<p><code>
+POST /apps/{app_id}/drains
+</code></p>
+
+<h4>Optional Parameters</h4>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>url</strong></td>
+    <td><em>url</em></td>
+    <td>domain url</td>
+    <td><code>"catsrus.org"</code></td>
+  </tr>
+</table>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X POST /apps/$APP_ID/drains
+-H &quot;Content-Type: application/json&quot; \
+-d &#39;{&quot;url&quot;:&quot;catsrus.org&quot;}&#39;
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 201 Created
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+  &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+  &ldquo;formation&rdquo;: {
+    &ldquo;web&rdquo;: 1
+  },
+  &ldquo;env&rdquo;: {
+    &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+  }
+}
+&ldquo;`</p>
+
+<h3>App API List Drains</h3>
+
+<p>List existing drains for app.</p>
+
+<p><code>
+GET /apps/{app_id}/drains
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /apps/$APP_ID/drains
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+[
+  {
+    &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+    &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+    &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+    &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+    &ldquo;formation&rdquo;: {
+      &ldquo;web&rdquo;: 1
+    },
+    &ldquo;env&rdquo;: {
+      &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+    }
+  }
+]
+&ldquo;`</p>
+
+<h3>App API Formation</h3>
+
+<p>List existing formation for app.</p>
+
+<p><code>
+GET /apps/{app_id}/scale
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /apps/$APP_ID/scale
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+  &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+  &ldquo;formation&rdquo;: {
+    &ldquo;web&rdquo;: 1
+  },
+  &ldquo;env&rdquo;: {
+    &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+  }
+}
+&ldquo;`</p>
+
+<h3>App API Update Formation</h3>
+
+<p>Update formation for app.</p>
+
+<p><code>
+POST /apps/{app_id}/scale
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X POST /apps/$APP_ID/scale
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+  &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+  &ldquo;formation&rdquo;: {
+    &ldquo;web&rdquo;: 1
+  },
+  &ldquo;env&rdquo;: {
+    &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+  }
+}
+&ldquo;`</p>
+
+<h3>App API Get ENV</h3>
+
+<p>Get ENV for app.</p>
+
+<p><code>
+GET /apps/{app_id}/env
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /apps/$APP_ID/env
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+  &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+  &ldquo;formation&rdquo;: {
+    &ldquo;web&rdquo;: 1
+  },
+  &ldquo;env&rdquo;: {
+    &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+  }
+}
+&ldquo;`</p>
+
+<h3>App API Update ENV</h3>
+
+<p>Update ENV for app.</p>
+
+<p><code>
+POST /apps/{app_id}/env
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X POST /apps/$APP_ID/env
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+  &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+  &ldquo;formation&rdquo;: {
+    &ldquo;web&rdquo;: 1
+  },
+  &ldquo;env&rdquo;: {
+    &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+  }
+}
+&ldquo;`</p>
+
+<h3>App API Logs</h3>
+
+<p>Get logs URL</p>
+
+<p><code>
+GET /apps/{app_id}/logs
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /apps/$APP_ID/logs
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+  &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+  &ldquo;formation&rdquo;: {
+    &ldquo;web&rdquo;: 1
+  },
+  &ldquo;env&rdquo;: {
+    &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+  }
+}
+&ldquo;`</p>
+
+<h3>App API Run Command</h3>
+
+<p>Run command in app.</p>
+
+<p><code>
+POST /apps/{app_id}/run
+</code></p>
+
+<h4>Optional Parameters</h4>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>command</strong></td>
+    <td><em>string</em></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X POST /apps/$APP_ID/run
+-H &quot;Content-Type: application/json&quot; \
+-d &#39;{&quot;command&quot;:null}&#39;
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Saucer UFO&rdquo;,
+  &ldquo;git&rdquo;: &ldquo;grave-pare-24&rdquo;,
+  &ldquo;formation&rdquo;: {
+    &ldquo;web&rdquo;: 1
+  },
+  &ldquo;env&rdquo;: {
+    &ldquo;HYBRID&rdquo;: &ldquo;true&rdquo;
+  }
+}
+&ldquo;`</p>
+
+<h2>Domain API</h2>
+
+<p>FIXME</p>
+
+<h3>Attributes</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>created_at</strong></td>
+    <td><em>date-time</em></td>
+    <td>when domain was created</td>
+    <td><code>"2012-01-01T12:00:00Z"</code></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong></td>
+    <td><em>uuid</em></td>
+    <td>unique identifier of domain</td>
+    <td><code>"01234567-89ab-cdef-0123-456789abcdef"</code></td>
+  </tr>
+  <tr>
+    <td><strong>updated_at</strong></td>
+    <td><em>date-time</em></td>
+    <td>when domain was updated</td>
+    <td><code>"2012-01-01T12:00:00Z"</code></td>
+  </tr>
+  <tr>
+    <td><strong>url</strong></td>
+    <td><em>url</em></td>
+    <td>domain url</td>
+    <td><code>"catsrus.org"</code></td>
+  </tr>
+</table>
+
+<h3>Domain API Delete</h3>
+
+<p>Delete an existing domain.</p>
+
+<p><code>
+DELETE /domains/{domain_id}
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X DELETE /domains/$DOMAIN_ID
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;url&rdquo;: &ldquo;catsrus.org&rdquo;
+}
+&ldquo;`</p>
+
+<h3>Domain API Info</h3>
+
+<p>Info for existing domain.</p>
+
+<p><code>
+GET /domains/{domain_id}
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /domains/$DOMAIN_ID
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;url&rdquo;: &ldquo;catsrus.org&rdquo;
+}
+&ldquo;`</p>
+
+<h2>Drain API</h2>
+
+<p>FIXME</p>
+
+<h3>Attributes</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>created_at</strong></td>
+    <td><em>date-time</em></td>
+    <td>when drain was created</td>
+    <td><code>"2012-01-01T12:00:00Z"</code></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong></td>
+    <td><em>uuid</em></td>
+    <td>unique identifier of drain</td>
+    <td><code>"01234567-89ab-cdef-0123-456789abcdef"</code></td>
+  </tr>
+  <tr>
+    <td><strong>updated_at</strong></td>
+    <td><em>date-time</em></td>
+    <td>when drain was updated</td>
+    <td><code>"2012-01-01T12:00:00Z"</code></td>
+  </tr>
+  <tr>
+    <td><strong>url</strong></td>
+    <td><em>url</em></td>
+    <td>domain url</td>
+    <td><code>"catsrus.org"</code></td>
+  </tr>
+</table>
+
+<h3>Drain API Delete</h3>
+
+<p>Delete an existing drain.</p>
+
+<p><code>
+DELETE /drains/{drain_id}
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X DELETE /drains/$DRAIN_ID
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;url&rdquo;: &ldquo;catsrus.org&rdquo;
+}
+&ldquo;`</p>
+
+<h3>Drain API Info</h3>
+
+<p>Info for existing drain.</p>
+
+<p><code>
+GET /drains/{drain_id}
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /drains/$DRAIN_ID
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;url&rdquo;: &ldquo;catsrus.org&rdquo;
+}
+&ldquo;`</p>
+
+<h2>Gear API</h2>
+
+<p>FIXME</p>
+
+<h3>Attributes</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>created_at</strong></td>
+    <td><em>date-time</em></td>
+    <td>when gear was created</td>
+    <td><code>"2012-01-01T12:00:00Z"</code></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong></td>
+    <td><em>uuid</em></td>
+    <td>unique identifier of gear</td>
+    <td><code>"01234567-89ab-cdef-0123-456789abcdef"</code></td>
+  </tr>
+  <tr>
+    <td><strong>name</strong></td>
+    <td><em>string</em></td>
+    <td>name of the gear.</td>
+    <td><code>"Happy Henry"</code></td>
+  </tr>
+  <tr>
+    <td><strong>number</strong></td>
+    <td><em>number</em></td>
+    <td>gear number</td>
+    <td><code>"1"</code></td>
+  </tr>
+  <tr>
+    <td><strong>type</strong></td>
+    <td><em>string</em></td>
+    <td>gear type</td>
+    <td><code>"web"</code></td>
+  </tr>
+  <tr>
+    <td><strong>updated_at</strong></td>
+    <td><em>date-time</em></td>
+    <td>when gear was updated</td>
+    <td><code>"2012-01-01T12:00:00Z"</code></td>
+  </tr>
+  <tr>
+    <td><strong>uptime</strong></td>
+    <td><em>number</em></td>
+    <td>duration of the gear&rsquo;s run</td>
+    <td><code>"11191"</code></td>
+  </tr>
+</table>
+
+<h3>Gear API Delete</h3>
+
+<p>Delete an existing gear.</p>
+
+<p><code>
+DELETE /gears/{gear_id}
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X DELETE /gears/$GEAR_ID
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Happy Henry&rdquo;,
+  &ldquo;number&rdquo;: &ldquo;1&rdquo;,
+  &ldquo;type&rdquo;: &ldquo;web&rdquo;,
+  &ldquo;uptime&rdquo;: &ldquo;11191&rdquo;
+}
+&ldquo;`</p>
+
+<h3>Gear API Info</h3>
+
+<p>Info for existing gear.</p>
+
+<p><code>
+GET /gears/{gear_id}
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /gears/$GEAR_ID
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Happy Henry&rdquo;,
+  &ldquo;number&rdquo;: &ldquo;1&rdquo;,
+  &ldquo;type&rdquo;: &ldquo;web&rdquo;,
+  &ldquo;uptime&rdquo;: &ldquo;11191&rdquo;
+}
+&ldquo;`</p>
+
+<h3>Gear API Restart</h3>
+
+<p>Restart existing gear</p>
+
+<p><code>
+POST /gears/{gear_id}/restart
+</code></p>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X POST /gears/$GEAR_ID/restart
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &quot;created_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;id&rdquo;: &ldquo;01234567-89ab-cdef-0123-456789abcdef&rdquo;,
+  &ldquo;updated_at&rdquo;: &ldquo;2012-01-01T12:00:00Z&rdquo;,
+  &ldquo;name&rdquo;: &ldquo;Happy Henry&rdquo;,
+  &ldquo;number&rdquo;: &ldquo;1&rdquo;,
+  &ldquo;type&rdquo;: &ldquo;web&rdquo;,
+  &ldquo;uptime&rdquo;: &ldquo;11191&rdquo;
+}
+&ldquo;`</p>
+
+<h2>Gitlab Interface</h2>
+
+<p>API for gitlab-shell&rsquo;s querying</p>
+
+<h3>Attributes</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+</table>
+
+<h3>Gitlab Interface Info</h3>
+
+<p>Determine if project(name: project) is allowed</p>
+
+<p><code>
+GET /api/git/allowed
+</code></p>
+
+<h4>Optional Parameters</h4>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>action</strong></td>
+    <td><em>string</em></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>key_id</strong></td>
+    <td><em>uuid</em></td>
+    <td>unique identifier of key</td>
+    <td><code>"01234567-89ab-cdef-0123-456789abcdef"</code></td>
+  </tr>
+  <tr>
+    <td><strong>project</strong></td>
+    <td><em>string</em></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>ref</strong></td>
+    <td><em>string</em></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /api/git/allowed?action=&amp;key_id=01234567-89ab-cdef-0123-456789abcdef&amp;project=&amp;ref=
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+}
+&rdquo;`</p>
+
+<h3>Gitlab Interface Find User by SSH-Key</h3>
+
+<p>Find a User by their SSH-Key</p>
+
+<p><code>
+GET /api/git/discover
+</code></p>
+
+<h4>Optional Parameters</h4>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>key_id</strong></td>
+    <td><em>uuid</em></td>
+    <td>unique identifier of key</td>
+    <td><code>"01234567-89ab-cdef-0123-456789abcdef"</code></td>
+  </tr>
+</table>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X GET /api/git/discover?key_id=01234567-89ab-cdef-0123-456789abcdef
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+}
+&ldquo;`</p>
+
+<h2>Git Stream</h2>
+
+<p>Responsible to streaming live to user during a git push</p>
+
+<h3>Attributes</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+</table>
+
+<h3>Git Stream Info</h3>
+
+<p>Info for existing stream.</p>
+
+<p><code>
+POST /api/stream/hook
+</code></p>
+
+<h4>Optional Parameters</h4>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>git</strong></td>
+    <td><em>string</em></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X POST /api/stream/hook
+-H &quot;Content-Type: application/json&quot; \
+-d &#39;{&quot;git&quot;:null}&#39;
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+}
+&rdquo;`</p>
+
+<h2>Session API</h2>
+
+<p>FIXME</p>
+
+<h3>Attributes</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>api_key</strong></td>
+    <td><em>string</em></td>
+    <td>Unique identifier used for logging into the dawn API</td>
+    <td><code>"abfc287239862398"</code></td>
+  </tr>
+</table>
+
+<h3>Session API Login</h3>
+
+<p>Login to the Dawn API</p>
+
+<p><code>
+POST /login
+</code></p>
+
+<h4>Optional Parameters</h4>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>password</strong></td>
+    <td><em>string</em></td>
+    <td>A password.</td>
+    <td><code>"45fancypants"</code></td>
+  </tr>
+  <tr>
+    <td><strong>username</strong></td>
+    <td><em>string</em></td>
+    <td>A String used for identifying users</td>
+    <td><code>"ThatGuy417"</code></td>
+  </tr>
+</table>
+
+<h4>Curl Example</h4>
+
+<p><code>term
+$ curl -n -X POST /login
+-H &quot;Content-Type: application/json&quot; \
+-d &#39;{&quot;username&quot;:&quot;ThatGuy417&quot;,&quot;password&quot;:&quot;45fancypants&quot;}&#39;
+</code></p>
+
+<h4>Response Example</h4>
+
+<p><code>
+HTTP/1.1 200 OK
+</code>
+<code>javascript</code>
+{
+  &ldquo;api_key&rdquo;: &ldquo;abfc287239862398&rdquo;
+}
+&ldquo;`</p>
+
+  </body>
+</html>

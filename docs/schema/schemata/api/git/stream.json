@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "title": "Git Stream",
+  "definitions": {
+    "identity": {
+      "example": "0",
+      "type": [
+        "string"
+      ]
+    }
+  },
+  "description": "Responsible to streaming live to user during a git push",
+  "links": [
+    {
+      "description": "Info for existing stream.",
+      "href": "/api/stream/hook",
+      "method": "POST",
+      "rel": "update",
+      "schema": {
+        "properties": {
+          "git": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "type": [
+          "object"
+        ]
+      },
+      "title": "Info"
+    }
+  ],
+  "properties": {
+
+  },
+  "type": [
+    "object"
+  ],
+  "id": "schemata/stream"
+}

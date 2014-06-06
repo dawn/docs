@@ -1,0 +1,15 @@
+#!/bin/bash
+for x in \
+  schemata/api/account.json \
+  schemata/api/account/key.json \
+  schemata/api/app.json \
+  schemata/api/domain.json \
+  schemata/api/drain.json \
+  schemata/api/gear.json \
+  schemata/api/git/git.json \
+  schemata/api/git/stream.json \
+  schemata/api/session.json
+do
+  echo $x
+  prmd verify $x
+done

@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "title": "Account SSH-Keys",
+  "definitions": {
+    "created_at": {
+      "description": "when key was created",
+      "example": "2012-01-01T12:00:00Z",
+      "format": "date-time",
+      "type": [
+        "string"
+      ]
+    },
+    "id": {
+      "description": "unique identifier of key",
+      "example": "01234567-89ab-cdef-0123-456789abcdef",
+      "format": "uuid",
+      "type": [
+        "string"
+      ]
+    },
+    "identity": {
+      "$ref": "/schemata/key#/definitions/id"
+    },
+    "updated_at": {
+      "description": "when key was updated",
+      "example": "2012-01-01T12:00:00Z",
+      "format": "date-time",
+      "type": [
+        "string"
+      ]
+    },
+    "key": {
+      "description": "Key",
+      "example": "...",
+      "type": [
+        "string"
+      ]
+    },
+    "fingerprint": {
+      "description": "Fingerprint",
+      "example": "c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06",
+      "type": [
+        "string"
+      ]
+    }
+  },
+  "description": "API for managing user SSH-keys",
+  "links": [
+    {
+      "description": "Create a new key.",
+      "href": "/account/keys",
+      "method": "POST",
+      "rel": "create",
+      "schema": {
+        "type": [
+          "object"
+        ],
+        "properties": {
+          "key": { "type": "string" }
+        }
+      },
+      "title": "Create"
+    },
+    {
+      "description": "Delete an existing key.",
+      "href": "/account/keys/{(%2Fschemata%2Fkey%23%2Fdefinitions%2Fidentity)}",
+      "method": "DELETE",
+      "rel": "destroy",
+      "title": "Delete"
+    },
+    {
+      "description": "Info for existing key.",
+      "href": "/account/keys/{(%2Fschemata%2Fkey%23%2Fdefinitions%2Fidentity)}",
+      "method": "GET",
+      "rel": "self",
+      "title": "Info"
+    },
+    {
+      "description": "List existing keys.",
+      "href": "/account/keys",
+      "method": "GET",
+      "rel": "instances",
+      "title": "List"
+    }
+  ],
+  "properties": {
+    "created_at": {
+      "$ref": "/schemata/key#/definitions/created_at"
+    },
+    "id": {
+      "$ref": "/schemata/key#/definitions/id"
+    },
+    "updated_at": {
+      "$ref": "/schemata/key#/definitions/updated_at"
+    },
+    "key": {
+      "$ref": "/schemata/key#/definitions/key"
+    },
+    "fingerprint": {
+      "$ref": "/schemata/key#/definitions/fingerprint"
+    }
+  },
+  "type": [
+    "object"
+  ],
+  "id": "schemata/key"
+}

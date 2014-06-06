@@ -1,0 +1,22 @@
+#!/bin/bash
+# buidl
+
+###
+# So apparently I can't spell (actually its to avoid this being read as a
+# ant build file)
+# trash the old api stuffs
+###
+rm -vf api.json api.html api.md
+
+###
+# first up combine all the api schemas together to form the api.json
+(prmd combine -m schema/meta.json schema/schemata/api/ > schema/api.json) &&
+# ensure that the newly created combine is good to go
+(prmd verify schema/api.json) &&
+# generate a markdown document from the combined schema
+(prmd doc schema/api.json > schema/api.md) &&
+# have redcarpet convert it to a html file
+(redcarpet --parse-no_intra_emphasis --smarty schema/api.md > schema/api.html) &&
+# pack that api.html into the layout and produce a index.html
+(ruby -e "require 'erb'; contents = File.read('schema/api.html'); STDOUT.write(ERB.new(File.read('layout.html.erb')).result)" > index.html)
+###

@@ -1,0 +1,987 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "definitions": {
+    "account": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Account API",
+      "definitions": {
+        "created_at": {
+          "description": "when account was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "id": {
+          "description": "unique identifier of account",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/account/definitions/id"
+        },
+        "updated_at": {
+          "description": "when account was updated",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "username": {
+          "description": "A String used for identifying users",
+          "example": "ThatGuy417",
+          "type": [
+            "string"
+          ]
+        },
+        "password": {
+          "description": "A password.",
+          "example": "45fancypants",
+          "type": [
+            "string"
+          ]
+        },
+        "api_key": {
+          "description": "Unique identifier used for logging into the dawn API",
+          "example": "abfc287239862398",
+          "type": [
+            "string"
+          ]
+        },
+        "email": {
+          "description": "User email",
+          "example": "wearethatguy@gmail.com",
+          "format": "email",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "API for retrieving and updating user details",
+      "links": [
+        {
+          "description": "Info for existing account.",
+          "href": "/account",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "Update an existing account.",
+          "href": "/account",
+          "method": "PATCH",
+          "rel": "update",
+          "schema": {
+            "properties": {
+              "username": {
+                "$ref": "#/definitions/account/definitions/username"
+              },
+              "password": {
+                "$ref": "#/definitions/account/definitions/password"
+              }
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/account/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/account/definitions/id"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/account/definitions/updated_at"
+        },
+        "username": {
+          "$ref": "#/definitions/account/definitions/username"
+        },
+        "api_key": {
+          "$ref": "#/definitions/account/definitions/api_key"
+        },
+        "email": {
+          "$ref": "#/definitions/account/definitions/email"
+        }
+      },
+      "type": [
+        "object"
+      ]
+    },
+    "key": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Account SSH-Keys",
+      "definitions": {
+        "created_at": {
+          "description": "when key was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "id": {
+          "description": "unique identifier of key",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/key/definitions/id"
+        },
+        "updated_at": {
+          "description": "when key was updated",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "key": {
+          "description": "Key",
+          "example": "...",
+          "type": [
+            "string"
+          ]
+        },
+        "fingerprint": {
+          "description": "Fingerprint",
+          "example": "c0:ca:bf:73:c1:da:2e:23:48:82:55:98:17:33:1c:06",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "API for managing user SSH-keys",
+      "links": [
+        {
+          "description": "Create a new key.",
+          "href": "/account/keys",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "type": [
+              "object"
+            ],
+            "properties": {
+              "key": {
+                "type": [
+                  "string"
+                ]
+              }
+            }
+          },
+          "title": "Create"
+        },
+        {
+          "description": "Delete an existing key.",
+          "href": "/account/keys/{(%23%2Fdefinitions%2Fkey%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing key.",
+          "href": "/account/keys/{(%23%2Fdefinitions%2Fkey%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "List existing keys.",
+          "href": "/account/keys",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/key/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/key/definitions/id"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/key/definitions/updated_at"
+        },
+        "key": {
+          "$ref": "#/definitions/key/definitions/key"
+        },
+        "fingerprint": {
+          "$ref": "#/definitions/key/definitions/fingerprint"
+        }
+      },
+      "type": [
+        "object"
+      ]
+    },
+    "app": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "App API",
+      "definitions": {
+        "created_at": {
+          "description": "when app was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "id": {
+          "description": "unique identifier of app",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/app/definitions/id"
+        },
+        "updated_at": {
+          "description": "when app was updated",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "name of the App",
+          "example": "Saucer UFO",
+          "type": [
+            "string"
+          ]
+        },
+        "version": {
+          "description": "version of the App",
+          "example": "112",
+          "type": [
+            "number"
+          ]
+        },
+        "env": {
+          "description": "ENV variables",
+          "example": {
+            "HYBRID": "true"
+          },
+          "type": [
+            "object"
+          ]
+        },
+        "git": {
+          "description": "repo name for app",
+          "example": "grave-pare-24",
+          "type": [
+            "string"
+          ]
+        },
+        "formation": {
+          "description": "",
+          "example": {
+            "web": 1
+          },
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "description": "FIXME",
+      "links": [
+        {
+          "description": "Create a new app.",
+          "href": "/apps",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+              "name": {
+                "$ref": "#/definitions/app/definitions/name"
+              }
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create"
+        },
+        {
+          "description": "Delete an existing app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "List existing apps.",
+          "href": "/apps",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        },
+        {
+          "description": "Update an existing app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}",
+          "method": "PATCH",
+          "rel": "update",
+          "schema": {
+            "properties": {
+              "name": {
+                "$ref": "#/definitions/app/definitions/name"
+              }
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update"
+        },
+        {
+          "description": "Create a new gear on app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/gears",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create Gear"
+        },
+        {
+          "description": "List existing gears for app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/gears",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List Gears"
+        },
+        {
+          "description": "Restart existing gears for app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/gears/restart",
+          "method": "POST",
+          "rel": "update",
+          "title": "Restart Gears"
+        },
+        {
+          "description": "Create a new domain on app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/domains",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+              "url": {
+                "$ref": "#/definitions/domain/definitions/url"
+              }
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create Domain"
+        },
+        {
+          "description": "List existing domains for app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/domains",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List Domains"
+        },
+        {
+          "description": "Create a new drain on app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/drains",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+              "url": {
+                "$ref": "#/definitions/drain/definitions/url"
+              }
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create Drain"
+        },
+        {
+          "description": "List existing drains for app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/drains",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List Drains"
+        },
+        {
+          "description": "List existing formation for app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/scale",
+          "method": "GET",
+          "rel": "self",
+          "title": "Formation"
+        },
+        {
+          "description": "Update formation for app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/scale",
+          "method": "POST",
+          "rel": "update",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update Formation"
+        },
+        {
+          "description": "Get ENV for app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/env",
+          "method": "GET",
+          "rel": "self",
+          "title": "Get ENV"
+        },
+        {
+          "description": "Update ENV for app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/env",
+          "method": "POST",
+          "rel": "update",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update ENV"
+        },
+        {
+          "description": "Get logs URL",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/logs",
+          "method": "GET",
+          "rel": "self",
+          "title": "Logs"
+        },
+        {
+          "description": "Run command in app.",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/run",
+          "method": "POST",
+          "rel": "update",
+          "schema": {
+            "properties": {
+              "command": {
+                "type": [
+                  "string"
+                ]
+              }
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Run Command"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/app/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/app/definitions/id"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/app/definitions/updated_at"
+        },
+        "name": {
+          "$ref": "#/definitions/app/definitions/name"
+        },
+        "git": {
+          "$ref": "#/definitions/app/definitions/git"
+        },
+        "formation": {
+          "$ref": "#/definitions/app/definitions/formation"
+        },
+        "env": {
+          "$ref": "#/definitions/app/definitions/env"
+        }
+      },
+      "type": [
+        "object"
+      ]
+    },
+    "domain": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Domain API",
+      "definitions": {
+        "created_at": {
+          "description": "when domain was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "id": {
+          "description": "unique identifier of domain",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/domain/definitions/id"
+        },
+        "updated_at": {
+          "description": "when domain was updated",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "url": {
+          "description": "domain url",
+          "example": "catsrus.org",
+          "format": "url",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "FIXME",
+      "links": [
+        {
+          "description": "Delete an existing domain.",
+          "href": "/domains/{(%23%2Fdefinitions%2Fdomain%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing domain.",
+          "href": "/domains/{(%23%2Fdefinitions%2Fdomain%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/domain/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/domain/definitions/id"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/domain/definitions/updated_at"
+        },
+        "url": {
+          "$ref": "#/definitions/domain/definitions/url"
+        }
+      },
+      "type": [
+        "object"
+      ]
+    },
+    "drain": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Drain API",
+      "definitions": {
+        "created_at": {
+          "description": "when drain was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "id": {
+          "description": "unique identifier of drain",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/drain/definitions/id"
+        },
+        "updated_at": {
+          "description": "when drain was updated",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "url": {
+          "description": "domain url",
+          "example": "catsrus.org",
+          "format": "url",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "FIXME",
+      "links": [
+        {
+          "description": "Delete an existing drain.",
+          "href": "/drains/{(%23%2Fdefinitions%2Fdrain%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing drain.",
+          "href": "/drains/{(%23%2Fdefinitions%2Fdrain%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/drain/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/drain/definitions/id"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/drain/definitions/updated_at"
+        },
+        "url": {
+          "$ref": "#/definitions/drain/definitions/url"
+        }
+      },
+      "type": [
+        "object"
+      ]
+    },
+    "gear": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Gear API",
+      "definitions": {
+        "created_at": {
+          "description": "when gear was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "id": {
+          "description": "unique identifier of gear",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/gear/definitions/id"
+        },
+        "updated_at": {
+          "description": "when gear was updated",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "uptime": {
+          "description": "duration of the gear's run",
+          "example": "11191",
+          "type": [
+            "number"
+          ]
+        },
+        "name": {
+          "description": "name of the gear.",
+          "example": "Happy Henry",
+          "type": [
+            "string"
+          ]
+        },
+        "number": {
+          "description": "gear number",
+          "example": "1",
+          "type": [
+            "number"
+          ]
+        },
+        "type": {
+          "description": "gear type",
+          "example": "web",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "FIXME",
+      "links": [
+        {
+          "description": "Delete an existing gear.",
+          "href": "/gears/{(%23%2Fdefinitions%2Fgear%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing gear.",
+          "href": "/gears/{(%23%2Fdefinitions%2Fgear%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "Restart existing gear",
+          "href": "/gears/{(%23%2Fdefinitions%2Fgear%2Fdefinitions%2Fidentity)}/restart",
+          "method": "POST",
+          "rel": "update",
+          "title": "Restart"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/gear/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/gear/definitions/id"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/gear/definitions/updated_at"
+        },
+        "name": {
+          "$ref": "#/definitions/gear/definitions/name"
+        },
+        "number": {
+          "$ref": "#/definitions/gear/definitions/number"
+        },
+        "type": {
+          "$ref": "#/definitions/gear/definitions/type"
+        },
+        "uptime": {
+          "$ref": "#/definitions/gear/definitions/uptime"
+        }
+      },
+      "type": [
+        "object"
+      ]
+    },
+    "git": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Gitlab Interface",
+      "definitions": {
+        "identity": {
+          "example": "0",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "API for gitlab-shell's querying",
+      "links": [
+        {
+          "description": "Determine if project(name: project) is allowed",
+          "href": "/api/git/allowed",
+          "method": "GET",
+          "rel": "self",
+          "schema": {
+            "properties": {
+              "key_id": {
+                "$ref": "#/definitions/key/definitions/id"
+              },
+              "project": {
+                "type": [
+                  "string"
+                ]
+              },
+              "action": {
+                "type": [
+                  "string"
+                ]
+              },
+              "ref": {
+                "type": [
+                  "string"
+                ]
+              }
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Info"
+        },
+        {
+          "description": "Find a User by their SSH-Key",
+          "href": "/api/git/discover",
+          "method": "GET",
+          "rel": "self",
+          "schema": {
+            "properties": {
+              "key_id": {
+                "$ref": "#/definitions/key/definitions/id"
+              }
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "name": {
+              "$ref": "#/definitions/account/definitions/username"
+            }
+          },
+          "title": "Find User by SSH-Key"
+        }
+      ],
+      "properties": {
+      },
+      "type": [
+        "object"
+      ]
+    },
+    "stream": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Git Stream",
+      "definitions": {
+        "identity": {
+          "example": "0",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "Responsible to streaming live to user during a git push",
+      "links": [
+        {
+          "description": "Info for existing stream.",
+          "href": "/api/stream/hook",
+          "method": "POST",
+          "rel": "update",
+          "schema": {
+            "properties": {
+              "git": {
+                "type": [
+                  "string"
+                ]
+              }
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Info"
+        }
+      ],
+      "properties": {
+      },
+      "type": [
+        "object"
+      ]
+    },
+    "session": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Session API",
+      "definitions": {
+        "identity": {
+          "example": "0",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "FIXME",
+      "links": [
+        {
+          "description": "Login to the Dawn API",
+          "href": "/login",
+          "method": "POST",
+          "rel": "login",
+          "schema": {
+            "properties": {
+              "username": {
+                "$ref": "#/definitions/account/definitions/username"
+              },
+              "password": {
+                "$ref": "#/definitions/account/definitions/password"
+              }
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Login"
+        }
+      ],
+      "properties": {
+        "api_key": {
+          "$ref": "#/definitions/account/definitions/api_key"
+        }
+      },
+      "type": [
+        "object"
+      ]
+    }
+  },
+  "properties": {
+    "account": {
+      "$ref": "#/definitions/account"
+    },
+    "key": {
+      "$ref": "#/definitions/key"
+    },
+    "app": {
+      "$ref": "#/definitions/app"
+    },
+    "domain": {
+      "$ref": "#/definitions/domain"
+    },
+    "drain": {
+      "$ref": "#/definitions/drain"
+    },
+    "gear": {
+      "$ref": "#/definitions/gear"
+    },
+    "git": {
+      "$ref": "#/definitions/git"
+    },
+    "stream": {
+      "$ref": "#/definitions/stream"
+    },
+    "session": {
+      "$ref": "#/definitions/session"
+    }
+  },
+  "type": [
+    "object"
+  ],
+  "title": "Dawn API",
+  "links": [
+    "dawn.dev"
+  ],
+  "description": "Dawn API"
+}

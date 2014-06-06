@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "title": "Gitlab Interface",
+  "definitions": {
+    "identity": {
+      "example": "0",
+      "type": [
+        "string"
+      ]
+    }
+  },
+  "description": "API for gitlab-shell's querying",
+  "links": [
+    {
+      "description": "Determine if project(name: project) is allowed",
+      "href": "/api/git/allowed",
+      "method": "GET",
+      "rel": "self",
+      "schema": {
+        "properties": {
+          "key_id": {
+            "$ref": "/schemata/key#/definitions/id"
+          },
+          "project": {
+            "type": [
+              "string"
+            ]
+          },
+          "action": {
+            "type": [
+              "string"
+            ]
+          },
+          "ref": {
+            "type": [
+              "string"
+            ]
+          },
+        },
+        "type": [
+          "object"
+        ]
+      },
+      "title": "Info"
+    },
+    {
+      "description": "Find a User by their SSH-Key",
+      "href": "/api/git/discover",
+      "method": "GET",
+      "rel": "self",
+      "schema": {
+        "properties": {
+          "key_id": {
+            "$ref": "/schemata/key#/definitions/id"
+          }
+        },
+        "type": [
+          "object"
+        ]
+      },
+      "type": [
+        "object"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "/schemata/account#/definitions/username"
+        }
+      },
+      "title": "Find User by SSH-Key"
+    }
+  ],
+  "properties": {
+
+  },
+  "type": [
+    "object"
+  ],
+  "id": "schemata/git"
+}
