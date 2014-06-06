@@ -57,7 +57,7 @@ GET /account
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/account
+$ curl -n -X GET https://api.dawn.dev/account
 ```
 
 
@@ -108,7 +108,7 @@ PATCH /account
 
 #### Curl Example
 ```term
-$ curl -n -X PATCH https://dawn.dev/account
+$ curl -n -X PATCH https://api.dawn.dev/account
 -H "Content-Type: application/json" \
 -d '{"username":"ThatGuy417","password":"45fancypants"}'
 ```
@@ -199,7 +199,7 @@ POST /account/keys
 
 #### Curl Example
 ```term
-$ curl -n -X POST https://dawn.dev/account/keys
+$ curl -n -X POST https://api.dawn.dev/account/keys
 -H "Content-Type: application/json" \
 -d '{"key":null}'
 ```
@@ -229,7 +229,7 @@ DELETE /account/keys/{key_id}
 
 #### Curl Example
 ```term
-$ curl -n -X DELETE https://dawn.dev/account/keys/$KEY_ID
+$ curl -n -X DELETE https://api.dawn.dev/account/keys/$KEY_ID
 ```
 
 
@@ -257,7 +257,7 @@ GET /account/keys/{key_id}
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/account/keys/$KEY_ID
+$ curl -n -X GET https://api.dawn.dev/account/keys/$KEY_ID
 ```
 
 
@@ -285,7 +285,7 @@ GET /account/keys
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/account/keys
+$ curl -n -X GET https://api.dawn.dev/account/keys
 ```
 
 
@@ -387,7 +387,7 @@ POST /apps
 
 #### Curl Example
 ```term
-$ curl -n -X POST https://dawn.dev/apps
+$ curl -n -X POST https://api.dawn.dev/apps
 -H "Content-Type: application/json" \
 -d '{"name":"Saucer UFO"}'
 ```
@@ -423,7 +423,7 @@ DELETE /apps/{app_id}
 
 #### Curl Example
 ```term
-$ curl -n -X DELETE https://dawn.dev/apps/$APP_ID
+$ curl -n -X DELETE https://api.dawn.dev/apps/$APP_ID
 ```
 
 
@@ -457,7 +457,7 @@ GET /apps/{app_id}
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/apps/$APP_ID
+$ curl -n -X GET https://api.dawn.dev/apps/$APP_ID
 ```
 
 
@@ -491,7 +491,7 @@ GET /apps
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/apps
+$ curl -n -X GET https://api.dawn.dev/apps
 ```
 
 
@@ -543,7 +543,7 @@ PATCH /apps/{app_id}
 
 #### Curl Example
 ```term
-$ curl -n -X PATCH https://dawn.dev/apps/$APP_ID
+$ curl -n -X PATCH https://api.dawn.dev/apps/$APP_ID
 -H "Content-Type: application/json" \
 -d '{"name":"Saucer UFO"}'
 ```
@@ -579,7 +579,7 @@ POST /apps/{app_id}/gears
 
 #### Curl Example
 ```term
-$ curl -n -X POST https://dawn.dev/apps/$APP_ID/gears
+$ curl -n -X POST https://api.dawn.dev/apps/$APP_ID/gears
 ```
 
 
@@ -613,7 +613,7 @@ GET /apps/{app_id}/gears
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/apps/$APP_ID/gears
+$ curl -n -X GET https://api.dawn.dev/apps/$APP_ID/gears
 ```
 
 
@@ -649,7 +649,7 @@ POST /apps/{app_id}/gears/restart
 
 #### Curl Example
 ```term
-$ curl -n -X POST https://dawn.dev/apps/$APP_ID/gears/restart
+$ curl -n -X POST https://api.dawn.dev/apps/$APP_ID/gears/restart
 ```
 
 
@@ -699,7 +699,7 @@ POST /apps/{app_id}/domains
 
 #### Curl Example
 ```term
-$ curl -n -X POST https://dawn.dev/apps/$APP_ID/domains
+$ curl -n -X POST https://api.dawn.dev/apps/$APP_ID/domains
 -H "Content-Type: application/json" \
 -d '{"url":"catsrus.org"}'
 ```
@@ -735,7 +735,7 @@ GET /apps/{app_id}/domains
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/apps/$APP_ID/domains
+$ curl -n -X GET https://api.dawn.dev/apps/$APP_ID/domains
 ```
 
 
@@ -787,7 +787,7 @@ POST /apps/{app_id}/drains
 
 #### Curl Example
 ```term
-$ curl -n -X POST https://dawn.dev/apps/$APP_ID/drains
+$ curl -n -X POST https://api.dawn.dev/apps/$APP_ID/drains
 -H "Content-Type: application/json" \
 -d '{"url":"catsrus.org"}'
 ```
@@ -823,7 +823,7 @@ GET /apps/{app_id}/drains
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/apps/$APP_ID/drains
+$ curl -n -X GET https://api.dawn.dev/apps/$APP_ID/drains
 ```
 
 
@@ -859,7 +859,7 @@ GET /apps/{app_id}/scale
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/apps/$APP_ID/scale
+$ curl -n -X GET https://api.dawn.dev/apps/$APP_ID/scale
 ```
 
 
@@ -893,7 +893,7 @@ POST /apps/{app_id}/scale
 
 #### Curl Example
 ```term
-$ curl -n -X POST https://dawn.dev/apps/$APP_ID/scale
+$ curl -n -X POST https://api.dawn.dev/apps/$APP_ID/scale
 ```
 
 
@@ -927,7 +927,7 @@ GET /apps/{app_id}/env
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/apps/$APP_ID/env
+$ curl -n -X GET https://api.dawn.dev/apps/$APP_ID/env
 ```
 
 
@@ -961,7 +961,7 @@ POST /apps/{app_id}/env
 
 #### Curl Example
 ```term
-$ curl -n -X POST https://dawn.dev/apps/$APP_ID/env
+$ curl -n -X POST https://api.dawn.dev/apps/$APP_ID/env
 ```
 
 
@@ -995,7 +995,7 @@ GET /apps/{app_id}/logs
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/apps/$APP_ID/logs
+$ curl -n -X GET https://api.dawn.dev/apps/$APP_ID/logs
 ```
 
 
@@ -1045,7 +1045,7 @@ POST /apps/{app_id}/run
 
 #### Curl Example
 ```term
-$ curl -n -X POST https://dawn.dev/apps/$APP_ID/run
+$ curl -n -X POST https://api.dawn.dev/apps/$APP_ID/run
 -H "Content-Type: application/json" \
 -d '{"command":null}'
 ```
@@ -1119,7 +1119,7 @@ DELETE /domains/{domain_id}
 
 #### Curl Example
 ```term
-$ curl -n -X DELETE https://dawn.dev/domains/$DOMAIN_ID
+$ curl -n -X DELETE https://api.dawn.dev/domains/$DOMAIN_ID
 ```
 
 
@@ -1146,7 +1146,7 @@ GET /domains/{domain_id}
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/domains/$DOMAIN_ID
+$ curl -n -X GET https://api.dawn.dev/domains/$DOMAIN_ID
 ```
 
 
@@ -1211,7 +1211,7 @@ DELETE /drains/{drain_id}
 
 #### Curl Example
 ```term
-$ curl -n -X DELETE https://dawn.dev/drains/$DRAIN_ID
+$ curl -n -X DELETE https://api.dawn.dev/drains/$DRAIN_ID
 ```
 
 
@@ -1238,7 +1238,7 @@ GET /drains/{drain_id}
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/drains/$DRAIN_ID
+$ curl -n -X GET https://api.dawn.dev/drains/$DRAIN_ID
 ```
 
 
@@ -1321,7 +1321,7 @@ DELETE /gears/{gear_id}
 
 #### Curl Example
 ```term
-$ curl -n -X DELETE https://dawn.dev/gears/$GEAR_ID
+$ curl -n -X DELETE https://api.dawn.dev/gears/$GEAR_ID
 ```
 
 
@@ -1351,7 +1351,7 @@ GET /gears/{gear_id}
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/gears/$GEAR_ID
+$ curl -n -X GET https://api.dawn.dev/gears/$GEAR_ID
 ```
 
 
@@ -1381,7 +1381,7 @@ POST /gears/{gear_id}/restart
 
 #### Curl Example
 ```term
-$ curl -n -X POST https://dawn.dev/gears/$GEAR_ID/restart
+$ curl -n -X POST https://api.dawn.dev/gears/$GEAR_ID/restart
 ```
 
 
@@ -1459,7 +1459,7 @@ GET /api/git/allowed
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/api/git/allowed?action=&key_id=01234567-89ab-cdef-0123-456789abcdef&project=&ref=
+$ curl -n -X GET https://api.dawn.dev/api/git/allowed?action=&key_id=01234567-89ab-cdef-0123-456789abcdef&project=&ref=
 ```
 
 
@@ -1498,7 +1498,7 @@ GET /api/git/discover
 
 #### Curl Example
 ```term
-$ curl -n -X GET https://dawn.dev/api/git/discover?key_id=01234567-89ab-cdef-0123-456789abcdef
+$ curl -n -X GET https://api.dawn.dev/api/git/discover?key_id=01234567-89ab-cdef-0123-456789abcdef
 ```
 
 
@@ -1551,7 +1551,7 @@ POST /api/stream/hook
 
 #### Curl Example
 ```term
-$ curl -n -X POST https://dawn.dev/api/stream/hook
+$ curl -n -X POST https://api.dawn.dev/api/stream/hook
 -H "Content-Type: application/json" \
 -d '{"git":null}'
 ```
@@ -1618,7 +1618,7 @@ POST /login
 
 #### Curl Example
 ```term
-$ curl -n -X POST https://dawn.dev/login
+$ curl -n -X POST https://api.dawn.dev/login
 -H "Content-Type: application/json" \
 -d '{"username":"ThatGuy417","password":"45fancypants"}'
 ```

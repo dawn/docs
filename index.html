@@ -7,11 +7,506 @@
     <link rel="stylesheet" href="./css/rouge.css" type="text/css" />
   </head>
   <body>
-    <h2>Account API</h2>
+    <div class="table-o-contents">
+      <ul>
+<li>
+<a href="#account-api">Account API</a>
+<ul>
+<li>
+<a href="#attributes">Attributes</a>
+</li>
+<li>
+<a href="#account-api-info">Account API Info</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#account-api-update">Account API Update</a>
+<ul>
+<li>
+<a href="#optional-parameters">Optional Parameters</a>
+</li>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#account-ssh-keys">Account SSH-Keys</a>
+<ul>
+<li>
+<a href="#attributes">Attributes</a>
+</li>
+<li>
+<a href="#account-ssh-keys-create">Account SSH-Keys Create</a>
+<ul>
+<li>
+<a href="#optional-parameters">Optional Parameters</a>
+</li>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#account-ssh-keys-delete">Account SSH-Keys Delete</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#account-ssh-keys-info">Account SSH-Keys Info</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#account-ssh-keys-list">Account SSH-Keys List</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api">App API</a>
+<ul>
+<li>
+<a href="#attributes">Attributes</a>
+</li>
+<li>
+<a href="#app-api-create">App API Create</a>
+<ul>
+<li>
+<a href="#optional-parameters">Optional Parameters</a>
+</li>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-delete">App API Delete</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-info">App API Info</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-list">App API List</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-update">App API Update</a>
+<ul>
+<li>
+<a href="#optional-parameters">Optional Parameters</a>
+</li>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-create-gear">App API Create Gear</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-list-gears">App API List Gears</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-restart-gears">App API Restart Gears</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-create-domain">App API Create Domain</a>
+<ul>
+<li>
+<a href="#optional-parameters">Optional Parameters</a>
+</li>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-list-domains">App API List Domains</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-create-drain">App API Create Drain</a>
+<ul>
+<li>
+<a href="#optional-parameters">Optional Parameters</a>
+</li>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-list-drains">App API List Drains</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-formation">App API Formation</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-update-formation">App API Update Formation</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-get-env">App API Get ENV</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-update-env">App API Update ENV</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-logs">App API Logs</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#app-api-run-command">App API Run Command</a>
+<ul>
+<li>
+<a href="#optional-parameters">Optional Parameters</a>
+</li>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#domain-api">Domain API</a>
+<ul>
+<li>
+<a href="#attributes">Attributes</a>
+</li>
+<li>
+<a href="#domain-api-delete">Domain API Delete</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#domain-api-info">Domain API Info</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#drain-api">Drain API</a>
+<ul>
+<li>
+<a href="#attributes">Attributes</a>
+</li>
+<li>
+<a href="#drain-api-delete">Drain API Delete</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#drain-api-info">Drain API Info</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#gear-api">Gear API</a>
+<ul>
+<li>
+<a href="#attributes">Attributes</a>
+</li>
+<li>
+<a href="#gear-api-delete">Gear API Delete</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#gear-api-info">Gear API Info</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#gear-api-restart">Gear API Restart</a>
+<ul>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#gitlab-interface">Gitlab Interface</a>
+<ul>
+<li>
+<a href="#attributes">Attributes</a>
+</li>
+<li>
+<a href="#gitlab-interface-info">Gitlab Interface Info</a>
+<ul>
+<li>
+<a href="#optional-parameters">Optional Parameters</a>
+</li>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#gitlab-interface-find-user-by-ssh-key">Gitlab Interface Find User by SSH-Key</a>
+<ul>
+<li>
+<a href="#optional-parameters">Optional Parameters</a>
+</li>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#git-stream">Git Stream</a>
+<ul>
+<li>
+<a href="#attributes">Attributes</a>
+</li>
+<li>
+<a href="#git-stream-info">Git Stream Info</a>
+<ul>
+<li>
+<a href="#optional-parameters">Optional Parameters</a>
+</li>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#session-api">Session API</a>
+<ul>
+<li>
+<a href="#attributes">Attributes</a>
+</li>
+<li>
+<a href="#session-api-login">Session API Login</a>
+<ul>
+<li>
+<a href="#optional-parameters">Optional Parameters</a>
+</li>
+<li>
+<a href="#curl-example">Curl Example</a>
+</li>
+<li>
+<a href="#response-example">Response Example</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    <h2 id="account-api">Account API</h2>
 
 <p>API for retrieving and updating user details</p>
 
-<h3>Attributes</h3>
+<h3 id="attributes">Attributes</h3>
 
 <table>
   <tr>
@@ -58,17 +553,17 @@
   </tr>
 </table>
 
-<h3>Account API Info</h3>
+<h3 id="account-api-info">Account API Info</h3>
 
 <p>Info for existing account.</p>
 <pre><code class="highlight plaintext">GET /account
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/account
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/account
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -81,13 +576,13 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>Account API Update</h3>
+<h3 id="account-api-update">Account API Update</h3>
 
 <p>Update an existing account.</p>
 <pre><code class="highlight plaintext">PATCH /account
 </code></pre>
 
-<h4>Optional Parameters</h4>
+<h4 id="optional-parameters">Optional Parameters</h4>
 
 <table>
   <tr>
@@ -110,13 +605,13 @@
   </tr>
 </table>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X PATCH https://dawn.dev/account
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X PATCH https://api.dawn.dev/account
 -H "Content-Type: application/json" \
 -d '{"username":"ThatGuy417","password":"45fancypants"}'
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -129,11 +624,11 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h2>Account SSH-Keys</h2>
+<h2 id="account-ssh-keys">Account SSH-Keys</h2>
 
 <p>API for managing user SSH-keys</p>
 
-<h3>Attributes</h3>
+<h3 id="attributes">Attributes</h3>
 
 <table>
   <tr>
@@ -174,13 +669,13 @@
   </tr>
 </table>
 
-<h3>Account SSH-Keys Create</h3>
+<h3 id="account-ssh-keys-create">Account SSH-Keys Create</h3>
 
 <p>Create a new key.</p>
 <pre><code class="highlight plaintext">POST /account/keys
 </code></pre>
 
-<h4>Optional Parameters</h4>
+<h4 id="optional-parameters">Optional Parameters</h4>
 
 <table>
   <tr>
@@ -197,13 +692,13 @@
   </tr>
 </table>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/account/keys
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X POST https://api.dawn.dev/account/keys
 -H "Content-Type: application/json" \
 -d '{"key":null}'
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 201 Created
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -215,17 +710,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>Account SSH-Keys Delete</h3>
+<h3 id="account-ssh-keys-delete">Account SSH-Keys Delete</h3>
 
 <p>Delete an existing key.</p>
 <pre><code class="highlight plaintext">DELETE /account/keys/{key_id}
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X DELETE https://dawn.dev/account/keys/$KEY_ID
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X DELETE https://api.dawn.dev/account/keys/$KEY_ID
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -237,17 +732,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>Account SSH-Keys Info</h3>
+<h3 id="account-ssh-keys-info">Account SSH-Keys Info</h3>
 
 <p>Info for existing key.</p>
 <pre><code class="highlight plaintext">GET /account/keys/{key_id}
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/account/keys/$KEY_ID
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/account/keys/$KEY_ID
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -259,17 +754,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>Account SSH-Keys List</h3>
+<h3 id="account-ssh-keys-list">Account SSH-Keys List</h3>
 
 <p>List existing keys.</p>
 <pre><code class="highlight plaintext">GET /account/keys
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/account/keys
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/account/keys
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">[</span><span class="w">
@@ -283,11 +778,11 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<h2>App API</h2>
+<h2 id="app-api">App API</h2>
 
 <p>API for managing user apps</p>
 
-<h3>Attributes</h3>
+<h3 id="attributes">Attributes</h3>
 
 <table>
   <tr>
@@ -340,13 +835,13 @@
   </tr>
 </table>
 
-<h3>App API Create</h3>
+<h3 id="app-api-create">App API Create</h3>
 
 <p>Create a new app.</p>
 <pre><code class="highlight plaintext">POST /apps
 </code></pre>
 
-<h4>Optional Parameters</h4>
+<h4 id="optional-parameters">Optional Parameters</h4>
 
 <table>
   <tr>
@@ -363,13 +858,13 @@
   </tr>
 </table>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X POST https://api.dawn.dev/apps
 -H "Content-Type: application/json" \
 -d '{"name":"Saucer UFO"}'
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 201 Created
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -387,17 +882,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>App API Delete</h3>
+<h3 id="app-api-delete">App API Delete</h3>
 
 <p>Delete an existing app.</p>
 <pre><code class="highlight plaintext">DELETE /apps/{app_id}
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X DELETE https://dawn.dev/apps/$APP_ID
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X DELETE https://api.dawn.dev/apps/$APP_ID
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -415,17 +910,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>App API Info</h3>
+<h3 id="app-api-info">App API Info</h3>
 
 <p>Info for existing app.</p>
 <pre><code class="highlight plaintext">GET /apps/{app_id}
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps/$APP_ID
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/apps/$APP_ID
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -443,17 +938,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>App API List</h3>
+<h3 id="app-api-list">App API List</h3>
 
 <p>List existing apps.</p>
 <pre><code class="highlight plaintext">GET /apps
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/apps
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">[</span><span class="w">
@@ -473,13 +968,13 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<h3>App API Update</h3>
+<h3 id="app-api-update">App API Update</h3>
 
 <p>Update an existing app.</p>
 <pre><code class="highlight plaintext">PATCH /apps/{app_id}
 </code></pre>
 
-<h4>Optional Parameters</h4>
+<h4 id="optional-parameters">Optional Parameters</h4>
 
 <table>
   <tr>
@@ -496,13 +991,13 @@
   </tr>
 </table>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X PATCH https://dawn.dev/apps/$APP_ID
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X PATCH https://api.dawn.dev/apps/$APP_ID
 -H "Content-Type: application/json" \
 -d '{"name":"Saucer UFO"}'
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -520,17 +1015,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>App API Create Gear</h3>
+<h3 id="app-api-create-gear">App API Create Gear</h3>
 
 <p>Create a new gear on app.</p>
 <pre><code class="highlight plaintext">POST /apps/{app_id}/gears
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps/$APP_ID/gears
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X POST https://api.dawn.dev/apps/$APP_ID/gears
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 201 Created
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -548,17 +1043,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>App API List Gears</h3>
+<h3 id="app-api-list-gears">App API List Gears</h3>
 
 <p>List existing gears for app.</p>
 <pre><code class="highlight plaintext">GET /apps/{app_id}/gears
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps/$APP_ID/gears
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/apps/$APP_ID/gears
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">[</span><span class="w">
@@ -578,17 +1073,17 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<h3>App API Restart Gears</h3>
+<h3 id="app-api-restart-gears">App API Restart Gears</h3>
 
 <p>Restart existing gears for app.</p>
 <pre><code class="highlight plaintext">POST /apps/{app_id}/gears/restart
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps/$APP_ID/gears/restart
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X POST https://api.dawn.dev/apps/$APP_ID/gears/restart
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -606,13 +1101,13 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>App API Create Domain</h3>
+<h3 id="app-api-create-domain">App API Create Domain</h3>
 
 <p>Create a new domain on app.</p>
 <pre><code class="highlight plaintext">POST /apps/{app_id}/domains
 </code></pre>
 
-<h4>Optional Parameters</h4>
+<h4 id="optional-parameters">Optional Parameters</h4>
 
 <table>
   <tr>
@@ -629,13 +1124,13 @@
   </tr>
 </table>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps/$APP_ID/domains
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X POST https://api.dawn.dev/apps/$APP_ID/domains
 -H "Content-Type: application/json" \
 -d '{"url":"catsrus.org"}'
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 201 Created
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -653,17 +1148,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>App API List Domains</h3>
+<h3 id="app-api-list-domains">App API List Domains</h3>
 
 <p>List existing domains for app.</p>
 <pre><code class="highlight plaintext">GET /apps/{app_id}/domains
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps/$APP_ID/domains
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/apps/$APP_ID/domains
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">[</span><span class="w">
@@ -683,13 +1178,13 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<h3>App API Create Drain</h3>
+<h3 id="app-api-create-drain">App API Create Drain</h3>
 
 <p>Create a new drain on app.</p>
 <pre><code class="highlight plaintext">POST /apps/{app_id}/drains
 </code></pre>
 
-<h4>Optional Parameters</h4>
+<h4 id="optional-parameters">Optional Parameters</h4>
 
 <table>
   <tr>
@@ -706,13 +1201,13 @@
   </tr>
 </table>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps/$APP_ID/drains
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X POST https://api.dawn.dev/apps/$APP_ID/drains
 -H "Content-Type: application/json" \
 -d '{"url":"catsrus.org"}'
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 201 Created
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -730,17 +1225,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>App API List Drains</h3>
+<h3 id="app-api-list-drains">App API List Drains</h3>
 
 <p>List existing drains for app.</p>
 <pre><code class="highlight plaintext">GET /apps/{app_id}/drains
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps/$APP_ID/drains
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/apps/$APP_ID/drains
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">[</span><span class="w">
@@ -760,17 +1255,17 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<h3>App API Formation</h3>
+<h3 id="app-api-formation">App API Formation</h3>
 
 <p>List existing formation for app.</p>
 <pre><code class="highlight plaintext">GET /apps/{app_id}/scale
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps/$APP_ID/scale
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/apps/$APP_ID/scale
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -788,17 +1283,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>App API Update Formation</h3>
+<h3 id="app-api-update-formation">App API Update Formation</h3>
 
 <p>Update formation for app.</p>
 <pre><code class="highlight plaintext">POST /apps/{app_id}/scale
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps/$APP_ID/scale
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X POST https://api.dawn.dev/apps/$APP_ID/scale
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -816,17 +1311,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>App API Get ENV</h3>
+<h3 id="app-api-get-env">App API Get ENV</h3>
 
 <p>Get ENV for app.</p>
 <pre><code class="highlight plaintext">GET /apps/{app_id}/env
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps/$APP_ID/env
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/apps/$APP_ID/env
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -844,17 +1339,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>App API Update ENV</h3>
+<h3 id="app-api-update-env">App API Update ENV</h3>
 
 <p>Update ENV for app.</p>
 <pre><code class="highlight plaintext">POST /apps/{app_id}/env
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps/$APP_ID/env
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X POST https://api.dawn.dev/apps/$APP_ID/env
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -872,17 +1367,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>App API Logs</h3>
+<h3 id="app-api-logs">App API Logs</h3>
 
 <p>Get logs URL</p>
 <pre><code class="highlight plaintext">GET /apps/{app_id}/logs
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/apps/$APP_ID/logs
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/apps/$APP_ID/logs
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -900,13 +1395,13 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>App API Run Command</h3>
+<h3 id="app-api-run-command">App API Run Command</h3>
 
 <p>Run command in app.</p>
 <pre><code class="highlight plaintext">POST /apps/{app_id}/run
 </code></pre>
 
-<h4>Optional Parameters</h4>
+<h4 id="optional-parameters">Optional Parameters</h4>
 
 <table>
   <tr>
@@ -923,13 +1418,13 @@
   </tr>
 </table>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/apps/$APP_ID/run
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X POST https://api.dawn.dev/apps/$APP_ID/run
 -H "Content-Type: application/json" \
 -d '{"command":null}'
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -947,11 +1442,11 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h2>Domain API</h2>
+<h2 id="domain-api">Domain API</h2>
 
 <p>API for managing app domains</p>
 
-<h3>Attributes</h3>
+<h3 id="attributes">Attributes</h3>
 
 <table>
   <tr>
@@ -986,17 +1481,17 @@
   </tr>
 </table>
 
-<h3>Domain API Delete</h3>
+<h3 id="domain-api-delete">Domain API Delete</h3>
 
 <p>Delete an existing domain.</p>
 <pre><code class="highlight plaintext">DELETE /domains/{domain_id}
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X DELETE https://dawn.dev/domains/$DOMAIN_ID
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X DELETE https://api.dawn.dev/domains/$DOMAIN_ID
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -1007,17 +1502,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>Domain API Info</h3>
+<h3 id="domain-api-info">Domain API Info</h3>
 
 <p>Info for existing domain.</p>
 <pre><code class="highlight plaintext">GET /domains/{domain_id}
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/domains/$DOMAIN_ID
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/domains/$DOMAIN_ID
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -1028,11 +1523,11 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h2>Drain API</h2>
+<h2 id="drain-api">Drain API</h2>
 
 <p>API for managing app log drains</p>
 
-<h3>Attributes</h3>
+<h3 id="attributes">Attributes</h3>
 
 <table>
   <tr>
@@ -1067,17 +1562,17 @@
   </tr>
 </table>
 
-<h3>Drain API Delete</h3>
+<h3 id="drain-api-delete">Drain API Delete</h3>
 
 <p>Delete an existing drain.</p>
 <pre><code class="highlight plaintext">DELETE /drains/{drain_id}
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X DELETE https://dawn.dev/drains/$DRAIN_ID
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X DELETE https://api.dawn.dev/drains/$DRAIN_ID
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -1088,17 +1583,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>Drain API Info</h3>
+<h3 id="drain-api-info">Drain API Info</h3>
 
 <p>Info for existing drain.</p>
 <pre><code class="highlight plaintext">GET /drains/{drain_id}
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/drains/$DRAIN_ID
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/drains/$DRAIN_ID
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -1109,11 +1604,11 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h2>Gear API</h2>
+<h2 id="gear-api">Gear API</h2>
 
 <p>API for managing app gears</p>
 
-<h3>Attributes</h3>
+<h3 id="attributes">Attributes</h3>
 
 <table>
   <tr>
@@ -1166,17 +1661,17 @@
   </tr>
 </table>
 
-<h3>Gear API Delete</h3>
+<h3 id="gear-api-delete">Gear API Delete</h3>
 
 <p>Delete an existing gear.</p>
 <pre><code class="highlight plaintext">DELETE /gears/{gear_id}
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X DELETE https://dawn.dev/gears/$GEAR_ID
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X DELETE https://api.dawn.dev/gears/$GEAR_ID
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -1190,17 +1685,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>Gear API Info</h3>
+<h3 id="gear-api-info">Gear API Info</h3>
 
 <p>Info for existing gear.</p>
 <pre><code class="highlight plaintext">GET /gears/{gear_id}
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/gears/$GEAR_ID
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/gears/$GEAR_ID
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -1214,17 +1709,17 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>Gear API Restart</h3>
+<h3 id="gear-api-restart">Gear API Restart</h3>
 
 <p>Restart existing gear</p>
 <pre><code class="highlight plaintext">POST /gears/{gear_id}/restart
 </code></pre>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/gears/$GEAR_ID/restart
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X POST https://api.dawn.dev/gears/$GEAR_ID/restart
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
@@ -1238,11 +1733,11 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h2>Gitlab Interface</h2>
+<h2 id="gitlab-interface">Gitlab Interface</h2>
 
 <p>API for gitlab-shell&#39;s querying</p>
 
-<h3>Attributes</h3>
+<h3 id="attributes">Attributes</h3>
 
 <table>
   <tr>
@@ -1253,13 +1748,13 @@
   </tr>
 </table>
 
-<h3>Gitlab Interface Info</h3>
+<h3 id="gitlab-interface-info">Gitlab Interface Info</h3>
 
 <p>Determine if project(name: project) is allowed</p>
 <pre><code class="highlight plaintext">GET /api/git/allowed
 </code></pre>
 
-<h4>Optional Parameters</h4>
+<h4 id="optional-parameters">Optional Parameters</h4>
 
 <table>
   <tr>
@@ -1294,24 +1789,24 @@
   </tr>
 </table>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/api/git/allowed?action=&amp;key_id=01234567-89ab-cdef-0123-456789abcdef&amp;project=&amp;ref=
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/api/git/allowed?action=&amp;key_id=01234567-89ab-cdef-0123-456789abcdef&amp;project=&amp;ref=
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h3>Gitlab Interface Find User by SSH-Key</h3>
+<h3 id="gitlab-interface-find-user-by-ssh-key">Gitlab Interface Find User by SSH-Key</h3>
 
 <p>Find a User by their SSH-Key</p>
 <pre><code class="highlight plaintext">GET /api/git/discover
 </code></pre>
 
-<h4>Optional Parameters</h4>
+<h4 id="optional-parameters">Optional Parameters</h4>
 
 <table>
   <tr>
@@ -1328,22 +1823,22 @@
   </tr>
 </table>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X GET https://dawn.dev/api/git/discover?key_id=01234567-89ab-cdef-0123-456789abcdef
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X GET https://api.dawn.dev/api/git/discover?key_id=01234567-89ab-cdef-0123-456789abcdef
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h2>Git Stream</h2>
+<h2 id="git-stream">Git Stream</h2>
 
 <p>Responsible to streaming live to user during a git push</p>
 
-<h3>Attributes</h3>
+<h3 id="attributes">Attributes</h3>
 
 <table>
   <tr>
@@ -1354,13 +1849,13 @@
   </tr>
 </table>
 
-<h3>Git Stream Info</h3>
+<h3 id="git-stream-info">Git Stream Info</h3>
 
 <p>Info for existing stream.</p>
 <pre><code class="highlight plaintext">POST /api/stream/hook
 </code></pre>
 
-<h4>Optional Parameters</h4>
+<h4 id="optional-parameters">Optional Parameters</h4>
 
 <table>
   <tr>
@@ -1377,24 +1872,24 @@
   </tr>
 </table>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/api/stream/hook
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X POST https://api.dawn.dev/api/stream/hook
 -H "Content-Type: application/json" \
 -d '{"git":null}'
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h2>Session API</h2>
+<h2 id="session-api">Session API</h2>
 
 <p>API for user login/logout</p>
 
-<h3>Attributes</h3>
+<h3 id="attributes">Attributes</h3>
 
 <table>
   <tr>
@@ -1411,13 +1906,13 @@
   </tr>
 </table>
 
-<h3>Session API Login</h3>
+<h3 id="session-api-login">Session API Login</h3>
 
 <p>Login to the Dawn API</p>
 <pre><code class="highlight plaintext">POST /login
 </code></pre>
 
-<h4>Optional Parameters</h4>
+<h4 id="optional-parameters">Optional Parameters</h4>
 
 <table>
   <tr>
@@ -1440,13 +1935,13 @@
   </tr>
 </table>
 
-<h4>Curl Example</h4>
-<pre><code class="highlight plaintext">$ curl -n -X POST https://dawn.dev/login
+<h4 id="curl-example">Curl Example</h4>
+<pre><code class="highlight plaintext">$ curl -n -X POST https://api.dawn.dev/login
 -H "Content-Type: application/json" \
 -d '{"username":"ThatGuy417","password":"45fancypants"}'
 </code></pre>
 
-<h4>Response Example</h4>
+<h4 id="response-example">Response Example</h4>
 <pre><code class="highlight plaintext">HTTP/1.1 200 OK
 </code></pre>
 <pre><code class="highlight json"><span class="p">{</span><span class="w">

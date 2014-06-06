@@ -37,15 +37,17 @@ extensions = {
   strikethrough:       true,
   superscript:         true,
   no_intra_emphasis:   true,
-  #with_toc_data:       true,
 }
 # have redcarpet convert it to html
-markdown = Redcarpet::Markdown.new(Rougify, extensions)
+toc_markdown = Redcarpet::Markdown.new Redcarpet::Render::HTML_TOC, extensions
+markdown = Redcarpet::Markdown.new Rougify.new(with_toc_data: true), extensions
 
 # pack that markdown into the layout and produce a index.html
 data = File.read("schema/api.md")
 context = OpenStruct.new
+context.toc = toc_markdown.render(data)
 context.contents = markdown.render(data)
+
 result = Tilt.new("layout.html.erb", pretty: true).render(context)
 File.write "../index.html", result
 ###
