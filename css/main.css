@@ -116,7 +116,7 @@ code, pre {
 }
 
 pre code { /* get rid of a bug where the letters are cut off if the tags are nested */
-  background: none;
+  background: none !important;
 }
 
 pre {
